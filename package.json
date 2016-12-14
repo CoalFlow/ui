@@ -2,7 +2,7 @@
   "name": "ui",
   "version": "0.0.7",
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
-  "main": "index.js",
+  "main": "build/ui.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
-  "typings": "index",
+  "typings": "build/source/ui/index",
   "author": "",
   "license": "ISC",
   "devDependencies": {
