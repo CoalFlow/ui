@@ -11,5 +11,8 @@
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  }
 }
