@@ -98,7 +98,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	eval("\"use strict\";\r\nvar HelloWorld = (function () {\r\n    function HelloWorld() {\r\n    }\r\n    HelloWorld.prototype.sayHello = function () {\r\n        console.log(\"Hello, new world!\");\r\n    };\r\n    return HelloWorld;\r\n}());\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = HelloWorld;\r\n;\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/index.ts\n// module id = 0\n// module chunks = 1\n//# sourceURL=webpack:///./source/ui/index.ts?");
+	eval("\"use strict\";\r\nvar HelloWorld = (function () {\r\n    function HelloWorld() {\r\n    }\r\n    HelloWorld.prototype.sayHello = function () {\r\n        console.log(\"Hello, new worasdfadsfld!\");\r\n    };\r\n    return HelloWorld;\r\n}());\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = HelloWorld;\r\n;\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/index.ts\n// module id = 0\n// module chunks = 1\n//# sourceURL=webpack:///./source/ui/index.ts?");
 
 /***/ }
 /******/ ]);
