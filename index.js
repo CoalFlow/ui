@@ -3,9 +3,10 @@ var HelloWorld = (function () {
     function HelloWorld() {
     }
     HelloWorld.prototype.sayHello = function () {
-        console.log("HelloWorld");
+        console.log("Hello, World!");
     };
     return HelloWorld;
 }());
-exports.HelloWorld = HelloWorld;
+exports.__esModule = true;
+exports["default"] = HelloWorld;
 ;

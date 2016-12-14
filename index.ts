@@ -1,7 +1,9 @@
-export class HelloWorld {
+export default class HelloWorld {
 
     sayHello() {
-        console.log("HelloWorld");
+        console.log("Hello, World!");
     }
 
 };
+
+
