@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "publish": "git commit -m publish"
+    "publish": "npm run build && git add . && version patch"
   },
   "repository": {
     "type": "git",
