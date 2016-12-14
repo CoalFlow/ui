@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        ui-input-number
+    </div>
+    <div class="col" style="text-align: right">
+        {{$ctrl.numberValue}}
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        basic
+    </div>
+    <div class="col ">
+        <ui-input-number ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' } "></ui-input-number>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        ng-required
+    </div>
+    <div class="col ">
+        <ui-input-number ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' } " ng-required="true "></ui-input-number>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        ui-validate ( > 0 )
+    </div>
+    <div class="col ">
+        <ui-input-number ng-model="$ctrl.numberValue" options=" { placeholder: 'enter number...' } " ui-validate="'$value > 0'"></ui-input-number>
+    </div>
+</div>

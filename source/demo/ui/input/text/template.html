@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col">
+        ui-input-text
+    </div>
+    <div class="col">
+        {{$ctrl.textValue}}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        basic
+    </div>
+    <div class="col">
+        <ui-input-text ng-model="$ctrl.textValue" options=" { placeholder: 'enter text...' } ">
+        </ui-input-text>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        ng-required
+    </div>
+    <div class="col">
+        <ui-input-text ng-model="$ctrl.textValue" options=" { placeholder: 'enter text...' } " ng-required="true">
+        </ui-input-text>
+    </div>
+</div>

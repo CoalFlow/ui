@@ -1,0 +1,33 @@
+demo-ui-input-text {
+
+    table {
+        width: 100%;
+
+        th,
+        td {
+            width:50%;
+            border: solid 1px#ccc;
+        }
+    }
+
+}
+
+div.row {
+    width: 100%;
+    font-size: 0pt;
+}
+
+div.col {
+    font-size: 12pt;
+    width:50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 480px) {
+
+    div.col {
+        width: 100%;
+    }
+
+}

@@ -8,7 +8,7 @@ module.exports = {
 
     entry: {
         demo: "./source/demo/index.ts",
-        ui: "./source/ui/index.ts"
+        // ui: "./source/ui/module.ts"
     },
 
     devtool: 'eval',

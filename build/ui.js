@@ -12,7 +12,28 @@
 /******/ 			installedChunks[chunkId] = 0;
 /******/ 		}
 /******/ 		for(moduleId in moreModules) {
-/******/ 			modules[moduleId] = moreModules[moduleId];
+/******/ 			var _m = moreModules[moduleId];
+
+/******/ 			// Check if module is deduplicated
+/******/ 			switch(typeof _m) {
+/******/ 			case "object":
+/******/ 				// Module can be created from a template
+/******/ 				modules[moduleId] = (function(_m) {
+/******/ 					var args = _m.slice(1), templateId = _m[0];
+/******/ 					return function (a,b,c) {
+/******/ 						modules[templateId].apply(this, [a,b,c].concat(args));
+/******/ 					};
+/******/ 				}(_m));
+/******/ 				break;
+/******/ 			case "function":
+/******/ 				// Normal module
+/******/ 				modules[moduleId] = _m;
+/******/ 				break;
+/******/ 			default:
+/******/ 				// Module is a copy of another module
+/******/ 				modules[moduleId] = modules[_m];
+/******/ 				break;
+/******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
 /******/ 		while(callbacks.length)
@@ -89,16 +110,29 @@
 
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports) {
-
-	eval("\"use strict\";\r\nvar HelloWorld = (function () {\r\n    function HelloWorld() {\r\n    }\r\n    HelloWorld.prototype.sayHello = function () {\r\n        console.log(\"Hello, new worasdfadsfld!\");\r\n    };\r\n    return HelloWorld;\r\n}());\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = HelloWorld;\r\n;\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/index.ts\n// module id = 0\n// module chunks = 1\n//# sourceURL=webpack:///./source/ui/index.ts?");
-
-/***/ }
-/******/ ]);
+/******/ ((function(modules) {
+	// Check all modules for deduplicated modules
+	for(var i in modules) {
+		if(Object.prototype.hasOwnProperty.call(modules, i)) {
+			switch(typeof modules[i]) {
+			case "function": break;
+			case "object":
+				// Module can be created from a template
+				modules[i] = (function(_m) {
+					var args = _m.slice(1), fn = modules[_m[0]];
+					return function (a,b,c) {
+						fn.apply(this, [a,b,c].concat(args));
+					};
+				}(modules[i]));
+				break;
+			default:
+				// Module is a copy of another module
+				modules[i] = modules[modules[i]];
+				break;
+			}
+		}
+	}
+	return modules;
+}([])));

@@ -1,0 +1,16 @@
+$focussedBorderColor: #4ab2f7;
+
+ui-input-number-spinner {
+    > div {
+
+        input {
+            text-align: right;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+}
