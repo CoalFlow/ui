@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
+  "typings": "index",
   "author": "",
   "license": "ISC",
   "devDependencies": {
