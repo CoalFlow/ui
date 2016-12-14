@@ -1,7 +1,7 @@
 export default class HelloWorld {
 
     sayHello() {
-        console.log("Hello, World Version 11");
+        console.log("Hello, new world!");
     }
 
 };
