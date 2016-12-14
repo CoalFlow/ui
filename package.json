@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "publish": "npm version patch && git push"
+    "publish": "npm version patch && git push && git push github"
   },
   "repository": {
     "type": "git",
