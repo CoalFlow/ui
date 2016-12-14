@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
-  "typings": "build/source/ui/index",
+  "typings": "build/source/ui/module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
