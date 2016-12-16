@@ -1,8 +1,8 @@
 {
-  "name": "testing",
+  "name": "ui-new",
   "version": "0.0.27",
   "description": "A package of common ui features written for CoalFlow.",
-  "main": "build/testing.js",
+  "main": "build/uiNew.js",
   "files": [
     "build/"
   ],
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
-  "typings": "build/source/ui/module",
+  "typings": "build/source/ui-new/module",
   "author": "",
   "license": "ISC",
   "devDependencies": {

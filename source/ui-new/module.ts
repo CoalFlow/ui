@@ -7,11 +7,11 @@ import * as angular from 'angular';
 
 //export default function noMoreUi(): ng.IModule {
 
-let app = angular.module('testing', [
+let app = angular.module('ui-new', [
 
 ]);
 
-console.log("initializing testing");
+console.log("initializing ui-new");
 
 // text(app);
 // number(app);
