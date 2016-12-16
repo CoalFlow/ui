@@ -1,7 +1,7 @@
 {
-  "name": "ui",
+  "name": "ui-testing",
   "version": "0.0.23",
-  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "description": "A package of common ui features written for CoalFlow.",
   "main": "build/ui.js",
   "files": [
     "build/"

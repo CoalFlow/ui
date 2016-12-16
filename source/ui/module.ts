@@ -7,11 +7,11 @@ import percentage from './input/percentage/component';
 
 //export default function ui(): ng.IModule {
 
-let app = ng.module('gui', [
+let app = ng.module('ui-testing', [
 
 ]);
 
-console.log("initializing");
+console.log("initializing ui-testing");
 
 text(app);
 number(app);
