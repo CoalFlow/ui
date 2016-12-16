@@ -42,9 +42,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\n//export default function noMoreUi(): ng.IModule {\r\nvar app = angular.module('ui-new', []);\r\nconsole.log(\"initializing ui-new\");\r\n//  return app;\r\n//}; \r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui-new/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui-new/module.ts?");
+	eval("\"use strict\";\r\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"../definitions\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar app = angular.module('ui-new', []);\r\nconsole.log(\"initializing ui-new\");\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui-new/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui-new/module.ts?");
 
 /***/ }
 /******/ ]);

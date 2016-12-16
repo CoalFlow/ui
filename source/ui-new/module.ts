@@ -1,12 +1,7 @@
-//import * as angular from 'angular';
-declare var angular: any;
-
 // import text from './input/text/component';
 // import number from './input/number/component';
 // import numberSpinner from './input/number-spinner/component';
 // import percentage from './input/percentage/component';
-
-//export default function noMoreUi(): ng.IModule {
 
 let app = angular.module('ui-new', [
 
@@ -20,7 +15,5 @@ console.log("initializing ui-new");
 // percentage(app);
 
 export {
-};
 
-  //  return app;
-//};
+};

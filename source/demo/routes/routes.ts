@@ -3,7 +3,7 @@ import 'angular-route';
 export default (mod: ng.IModule) => {
 
     mod.config(['$routeProvider', '$locationProvider',
-        ($routeProvider: angular.route.IRouteProvider, $locationProvider: angular.ILocationProvider) => {
+        ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) => {
 
             $routeProvider
 

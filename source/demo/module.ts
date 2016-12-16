@@ -1,13 +1,13 @@
-import * as ng from 'angular';
+import * as angular from 'angular';
 import home from './home/component';
 import routes from './routes/routes'
 import ui from './ui/index';
 
 export default (): ng.IModule => {
 
-    let app = ng.module('demo', [
+    let app = angular.module('demo', [
         'ngRoute',
-        'ui-testing'
+        'ui-new'
     ]);
 
     routes(app);
