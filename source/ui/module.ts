@@ -5,16 +5,18 @@ import number from './input/number/component';
 import numberSpinner from './input/number-spinner/component';
 import percentage from './input/percentage/component';
 
-export default function ui(): ng.IModule {
+//export default function ui(): ng.IModule {
 
-    let app = ng.module('gui', [
+let app = ng.module('gui', [
 
-    ]);
+]);
 
-    text(app);
-    number(app);
-    numberSpinner(app);
-    percentage(app);
+console.log("initializing");
 
-    return app;
-};
+text(app);
+number(app);
+numberSpinner(app);
+percentage(app);
+
+  //  return app;
+//};
