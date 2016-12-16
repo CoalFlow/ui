@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const WebpackMd5Hash = require('webpack-md5-hash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var chunkOrder = ["dependencies", "uiNew", "demo"];
+var chunkOrder = ["dependencies", "ui", "demo"];
 
 module.exports = {
 
     entry: {
         dependencies: "./source/demo/dependencies.ts",
-        uiNew: "./source/ui-new/module.ts",
+        ui: "./source/ui/module.ts",
         demo: "./source/demo/index.ts"
     },
 

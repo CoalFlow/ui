@@ -4,11 +4,11 @@ declare var angular: ng.IAngularStatic;
 // import numberSpinner from './input/number-spinner/component';
 // import percentage from './input/percentage/component';
 
-let app = angular.module('ui-new', [
+let app = angular.module('ui', [
 
 ]);
 
-console.log("initializing ui-new");
+console.log("initializing ui");
 
 // text(app);
 // number(app);

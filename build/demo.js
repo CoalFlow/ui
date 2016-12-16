@@ -73,7 +73,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\r\nvar component_1 = __webpack_require__(2);\r\nvar routes_1 = __webpack_require__(8);\r\nvar index_1 = __webpack_require__(11);\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = function () {\r\n    var app = angular.module('demo', [\r\n        'ngRoute',\r\n        'ui-new'\r\n    ]);\r\n    routes_1.default(app);\r\n    component_1.default(app);\r\n    index_1.default(app);\r\n    return app;\r\n};\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/demo/module.ts\n// module id = 1\n// module chunks = 0\n//# sourceURL=webpack:///./source/demo/module.ts?");
+	eval("\"use strict\";\r\nvar component_1 = __webpack_require__(2);\r\nvar routes_1 = __webpack_require__(8);\r\nvar index_1 = __webpack_require__(11);\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = function () {\r\n    var app = angular.module('demo', [\r\n        'ngRoute',\r\n        'ui'\r\n    ]);\r\n    routes_1.default(app);\r\n    component_1.default(app);\r\n    index_1.default(app);\r\n    return app;\r\n};\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/demo/module.ts\n// module id = 1\n// module chunks = 0\n//# sourceURL=webpack:///./source/demo/module.ts?");
 
 /***/ },
 /* 2 */
