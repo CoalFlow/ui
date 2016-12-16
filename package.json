@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "publish": "npm run build && npm version patch && git push && git push github"
+    "publish": "npm run build && npm version patch && git push --tags && git push && git push github --tags && git push github"
   },
   "repository": {
     "type": "git",
