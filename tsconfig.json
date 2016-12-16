@@ -5,8 +5,5 @@
         "noImplicitAny": false,
         "sourceMap": false,
         "declaration": true
-    },
-    "files": [
-        "source/definitions.d.ts"
-    ]
+    }
 }
