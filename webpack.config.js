@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
     entry: {
-        dependencies: "./source/dependencies.ts",
+        //   dependencies: "./source/dependencies.ts",
         uiNew: "./source/ui-new/module.ts"//,
         //   demo: "./source/demo/index.ts"
     },
@@ -45,9 +45,9 @@ module.exports = {
         new ExtractTextPlugin("styles.css"),
 
         //  https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "dependencies"
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "dependencies"
+        // }),
 
         new webpack.ProvidePlugin({
             "window.jQuery": "jquery",   //  This exposes jQuery to angular so that it replaces jqLite
