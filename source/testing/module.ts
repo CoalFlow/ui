@@ -5,7 +5,7 @@ import * as angular from 'angular';
 // import numberSpinner from './input/number-spinner/component';
 // import percentage from './input/percentage/component';
 
-//export default function ui(): ng.IModule {
+//export default function noMoreUi(): ng.IModule {
 
 let app = angular.module('testing', [
 

@@ -7,8 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
     entry: {
-        testing: "./source/ui/module.ts",
-        demo: "./source/demo/index.ts"
+        testing: "./source/testing/module.ts"//,
+     //   demo: "./source/demo/index.ts"
     },
 
     devtool: 'eval',
