@@ -8,7 +8,7 @@ webpackJsonp([0,1],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\r\nvar ng = __webpack_require__(2);\r\nvar component_1 = __webpack_require__(5);\r\nvar component_2 = __webpack_require__(14);\r\nvar component_3 = __webpack_require__(18);\r\nvar component_4 = __webpack_require__(24);\r\n//export default function ui(): ng.IModule {\r\nvar app = ng.module('gui', []);\r\nconsole.log(\"initializing\");\r\ncomponent_1.default(app);\r\ncomponent_2.default(app);\r\ncomponent_3.default(app);\r\ncomponent_4.default(app);\r\n//  return app;\r\n//};\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 1\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
+	eval("\"use strict\";\r\nvar ng = __webpack_require__(2);\r\nvar component_1 = __webpack_require__(5);\r\nexports.text = component_1.default;\r\nvar component_2 = __webpack_require__(14);\r\nexports.number = component_2.default;\r\nvar component_3 = __webpack_require__(18);\r\nexports.numberSpinner = component_3.default;\r\nvar component_4 = __webpack_require__(24);\r\nexports.percentage = component_4.default;\r\n//export default function ui(): ng.IModule {\r\nvar app = ng.module('gui', []);\r\nconsole.log(\"initializing\");\r\ncomponent_1.default(app);\r\ncomponent_2.default(app);\r\ncomponent_3.default(app);\r\ncomponent_4.default(app);\r\n//  return app;\r\n//};\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 1\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
 
 /***/ },
 /* 2 */

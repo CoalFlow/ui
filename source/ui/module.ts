@@ -18,5 +18,12 @@ number(app);
 numberSpinner(app);
 percentage(app);
 
+export {
+    text,
+    number,
+    numberSpinner,
+    percentage
+};
+
   //  return app;
 //};
