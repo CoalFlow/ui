@@ -1,6 +1,5 @@
 /// <reference types="jquery" />
 /// <reference types="angular" />
-import * as ng from 'angular';
 export interface IUiInputCommonOptions {
     placeholder: string;
 }
