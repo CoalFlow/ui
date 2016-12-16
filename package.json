@@ -1,6 +1,6 @@
 {
   "name": "testing",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "A package of common ui features written for CoalFlow.",
   "main": "build/testing.js",
   "files": [
