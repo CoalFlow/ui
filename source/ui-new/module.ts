@@ -1,3 +1,4 @@
+declare var angular: ng.IAngularStatic;
 // import text from './input/text/component';
 // import number from './input/number/component';
 // import numberSpinner from './input/number-spinner/component';
