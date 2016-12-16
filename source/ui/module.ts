@@ -1,4 +1,4 @@
-import * as ng from 'angular';
+import * as angular from 'angular';
 
 // import text from './input/text/component';
 // import number from './input/number/component';
@@ -7,11 +7,11 @@ import * as ng from 'angular';
 
 //export default function ui(): ng.IModule {
 
-let app = ng.module('ui-testing', [
+let app = angular.module('testing', [
 
 ]);
 
-console.log("initializing ui-testing");
+console.log("initializing testing");
 
 // text(app);
 // number(app);

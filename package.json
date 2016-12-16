@@ -1,14 +1,14 @@
 {
-  "name": "ui-testing",
+  "name": "testing",
   "version": "0.0.25",
   "description": "A package of common ui features written for CoalFlow.",
-  "main": "build/ui.js",
+  "main": "build/testing.js",
   "files": [
     "build/"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "rimraf build && webpack",
     "start": "webpack-dev-server",
     "publish": "npm run build && npm version patch && git push --tags && git push && git push github --tags && git push github"
   },

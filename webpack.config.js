@@ -7,8 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
     entry: {
-        demo: "./source/demo/index.ts",
-        // ui: "./source/ui/module.ts"
+        testing: "./source/ui/module.ts",
+        demo: "./source/demo/index.ts"
     },
 
     devtool: 'eval',
@@ -45,7 +45,7 @@ module.exports = {
 
         //  https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
         new webpack.optimize.CommonsChunkPlugin({
-            name: "ui"
+            name: "testing"
         }),
 
         new webpack.ProvidePlugin({
