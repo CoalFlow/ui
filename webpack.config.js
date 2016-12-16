@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const WebpackMd5Hash = require('webpack-md5-hash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var chunkOrder = ["dependencies", "uiNew", "demo"];
+
 module.exports = {
 
     entry: {
@@ -39,15 +41,24 @@ module.exports = {
             //   Inject all assets into the given template
             inject: 'head',
 
+            //  Customise the order of injection of scripts into the html
+            chunksSortMode: function (a, b) {  //alphabetical order
+                if (chunkOrder.indexOf(a.names[0]) > chunkOrder.indexOf(b.names[0])) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+
         }),
 
         //  Extract the CSS into it's own file
         new ExtractTextPlugin("styles.css"),
 
         //  https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: "dependencies"
-        // }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ["dependencies"]
+        }),
 
         new webpack.ProvidePlugin({
             "window.jQuery": "jquery",   //  This exposes jQuery to angular so that it replaces jqLite
