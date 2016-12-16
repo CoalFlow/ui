@@ -1,4 +1,5 @@
-import * as angular from 'angular';
+//import * as angular from 'angular';
+declare var angular: any;
 
 // import text from './input/text/component';
 // import number from './input/number/component';
