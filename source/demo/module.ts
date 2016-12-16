@@ -7,7 +7,7 @@ export default (): ng.IModule => {
 
     let app = ng.module('demo', [
         'ngRoute',
-        'ui'
+        'gui'
     ]);
 
     routes(app);
