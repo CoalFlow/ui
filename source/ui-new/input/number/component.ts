@@ -1,4 +1,4 @@
-import * as ng from 'angular';
+//import * as ng from 'angular';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
 require('./style.scss');

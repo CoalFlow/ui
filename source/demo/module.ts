@@ -1,4 +1,5 @@
-import * as angular from 'angular';
+declare var angular: ng.IAngularStatic;
+
 import home from './home/component';
 import routes from './routes/routes'
 import ui from './ui/index';

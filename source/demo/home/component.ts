@@ -1,4 +1,4 @@
-import * as ng from 'angular';
+///declare var angular: ng.IAngularStatic;
 
 require('./style.scss');
 
