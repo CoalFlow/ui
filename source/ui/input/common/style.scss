@@ -2,6 +2,9 @@ $focussedBorderColor: #4ab2f7;
 $invalidBorderColor:#f00;
 
 .ui-input {
+
+    font-size: 10pt;
+
     > div {
         display: table;
         width: 100%;
@@ -11,12 +14,15 @@ $invalidBorderColor:#f00;
         div.control {
             display: table-cell;
             width: 100%;
-            padding-top: 8px;
-            padding-bottom: 8px;
+            padding-top: 4px;
+            padding-bottom: 4px;
             padding-left: 4px;
             padding-right: 4px;
+            vertical-align: middle;
 
             input {
+                position: relative;
+                top: 1px;
                 width: 100%;
                 border: solid 0px transparent;
                 background: transparent;
@@ -34,7 +40,9 @@ $invalidBorderColor:#f00;
             display: table-cell;
             vertical-align:middle;
             width:1%;
-            padding: 4px;
+            padding: 0px;
+            padding-left: 4px;
+            padding-right: 4px;
         }
     }
     &.focussed {

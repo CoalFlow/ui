@@ -1,35 +1,40 @@
-.ui-input > div {
-  display: table;
-  width: 100%;
-  border: solid 1px #ddd;
-  border-radius: 4px; }
-  .ui-input > div div.control {
-    display: table-cell;
+.ui-input {
+  font-size: 10pt; }
+  .ui-input > div {
+    display: table;
     width: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 4px;
-    padding-right: 4px; }
-    .ui-input > div div.control input {
+    border: solid 1px #ddd;
+    border-radius: 4px; }
+    .ui-input > div div.control {
+      display: table-cell;
       width: 100%;
-      border: solid 0px transparent;
-      background: transparent;
-      outline: none; }
-      .ui-input > div div.control input::-webkit-input-placeholder,
-      .ui-input >
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 4px;
+      padding-right: 4px;
+      vertical-align: middle; }
+      .ui-input > div div.control input {
+        position: relative;
+        top: 1px;
+        width: 100%;
+        border: solid 0px transparent;
+        background: transparent;
+        outline: none; }
+        .ui-input > div div.control input::-webkit-input-placeholder,
+        .ui-input >
 div div.control input:-moz-placeholder .ui-input > div div.control input::-moz-placeholder, .ui-input > div div.control input:-ms-input-placeholder {
-        color: #ccc !important; }
-  .ui-input > div .addon {
-    display: table-cell;
-    vertical-align: middle;
-    width: 1%;
-    padding: 4px; }
-
-.ui-input.focussed > div {
-  border: solid 1px #4ab2f7; }
-
-.ui-input.ng-invalid > div {
-  border: solid 1px #f00; }
+          color: #ccc !important; }
+    .ui-input > div .addon {
+      display: table-cell;
+      vertical-align: middle;
+      width: 1%;
+      padding: 0px;
+      padding-left: 4px;
+      padding-right: 4px; }
+  .ui-input.focussed > div {
+    border: solid 1px #4ab2f7; }
+  .ui-input.ng-invalid > div {
+    border: solid 1px #f00; }
 ui-input-number > div input {
   text-align: right; }
   ui-input-number > div input::-webkit-inner-spin-button, ui-input-number > div input::-webkit-outer-spin-button {

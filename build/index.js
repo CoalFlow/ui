@@ -124,7 +124,7 @@
 /* 15 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\"  step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number/template.html\n// module id = 15\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number/template.html?");
+	eval("module.exports = \"<div>\\r\\n    <div class=\\\"control\\\">\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\"  step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />    \\r\\n    </div>\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number/template.html\n// module id = 15\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number/template.html?");
 
 /***/ },
 /* 16 */
@@ -157,7 +157,7 @@
 /* 25 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />\\r\\n<div class=\\\"addon\\\">\\r\\n    %\\r\\n</div>\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/percentage/template.html\n// module id = 25\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/percentage/template.html?");
+	eval("module.exports = \"<div>\\r\\n    <div class=\\\"control\\\">\\r\\n        <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />\\r\\n    </div>\\r\\n    <div class=\\\"addon\\\">\\r\\n        %\\r\\n    </div>\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/percentage/template.html\n// module id = 25\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/percentage/template.html?");
 
 /***/ }
 /******/ ])));
