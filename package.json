@@ -1,6 +1,6 @@
 {
   "name": "ui-new",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "A package of common ui features written for CoalFlow.",
   "main": "build/ui.js",
   "files": [
