@@ -1,5 +1,4 @@
 declare var $: JQueryStatic;
-
 require("./style.scss");
 
 export interface IUiInputCommonOptions {
@@ -29,13 +28,13 @@ export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOpti
 
         var $input = $(this.$element.find('input'));
 
-        // $input.on("change keyup", (event: JQueryEventObject) => {
-        //     this.ngModel.$setViewValue($input.val());
-        // })
+        $input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue($input.val());
+        })
 
-        // this.ngModel.$render = () => {
-        //     $input.val(this.ngModel.$viewValue);
-        // };
+        this.ngModel.$render = () => {
+            $input.val(this.ngModel.$viewValue);
+        };
 
     }
 
