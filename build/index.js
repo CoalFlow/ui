@@ -67,7 +67,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\r\n//import * as angular from 'angular';\r\n//import * as $ from 'jquery';\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar component_1 = __webpack_require__(1);\r\nconsole.log(\"initializing ui\");\r\nconsole.log(angular);\r\nvar app = angular.module('ui', []);\r\napp.component(\"uiInputText\", new component_1.UiInputTextComponent());\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
+	eval("\"use strict\";\r\n//import * as angular from 'angular';\r\n//import * as $ from 'jquery';\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar component_1 = __webpack_require__(1);\r\nvar app = angular.module('ui', []);\r\napp.component(\"uiInputText\", new component_1.UiInputTextComponent());\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
 
 /***/ },
 /* 1 */

@@ -9,9 +9,6 @@ declare var angular: ng.IAngularStatic;
 // import percentage from './input/percentage/component';
 import { UiInputTextComponent } from './input/text/component';
 
-console.log("initializing ui");
-console.log(angular);
-
 let app = angular.module('ui', [
 
 ]);
