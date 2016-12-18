@@ -6,7 +6,7 @@ export interface IUiInputCommonOptions {
 export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOptions> implements ng.IController {
     protected $element: JQuery;
     static $inject: string[];
-    ngModel: angular.INgModelController;
+    ngModel: ng.INgModelController;
     options: TOptions;
     value: TValue;
     constructor($element: JQuery);
@@ -39,6 +39,8 @@ export class UiInputTextComponent extends UiInputCommonComponent {
     controller: typeof UiInputTextController;
     template: any;
 }
+
+import 'jquery';
 
 export {  };
 

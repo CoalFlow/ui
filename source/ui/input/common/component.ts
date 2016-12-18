@@ -1,5 +1,4 @@
-//  import * as ng from 'angular';
-
+declare var $: JQueryStatic;
 
 require("./style.scss");
 
@@ -13,7 +12,7 @@ export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOpti
 
     static $inject = ['$element'];
 
-    ngModel: angular.INgModelController;
+    ngModel: ng.INgModelController;
     options: TOptions;
     value: TValue;
 
@@ -30,13 +29,14 @@ export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOpti
 
         var $input = $(this.$element.find('input'));
 
-        $input.on("change keyup", (event: JQueryEventObject) => {
-            this.ngModel.$setViewValue($input.val());
-        })
+        // $input.on("change keyup", (event: JQueryEventObject) => {
+        //     this.ngModel.$setViewValue($input.val());
+        // })
 
-        this.ngModel.$render = () => {
-            $input.val(this.ngModel.$viewValue);
-        };
+        // this.ngModel.$render = () => {
+        //     $input.val(this.ngModel.$viewValue);
+        // };
+
     }
 
     focus(force: boolean) {
