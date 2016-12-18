@@ -1,4 +1,6 @@
-declare var angular: ng.IAngularStatic;
+declare var ng: ng.IAngularStatic;
+
+require('./index.scss');
 
 import home from './home/component';
 import routes from './routes/routes'
@@ -6,7 +8,7 @@ import ui from './ui/index';
 
 export default (): ng.IModule => {
 
-    let app = angular.module('demo', [
+    let app = ng.module('demo', [
         'ngRoute',
         'ui'
     ]);

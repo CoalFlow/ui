@@ -2,14 +2,14 @@ const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var chunkOrder = ["dependencies", "ui", "demo"];
 
 module.exports = {
 
     entry: {
         dependencies: "./source/demo/dependencies.ts",
-        ui: "./source/ui/module.ts",
+      //  ui: "./source/ui/module.ts",
         demo: "./source/demo/index.ts"
     },
 
@@ -57,6 +57,10 @@ module.exports = {
             ng: 'angular'
         }),
 
+        new CommonsChunkPlugin({
+            name: 'dependencies'
+        })
+        
         //   new DtsBundlePlugin()
     ],
 
@@ -122,7 +126,13 @@ module.exports = {
 
         //  The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base.
         contentBase: path.resolve("./build")
+    },
+  // specify option using `ts` property
+  ts: {
+    "compilerOptions": {
+        "declaration": false
     }
+  }    
 };
 
 
