@@ -1,41 +1,36 @@
-// //import * as ng from 'angular';
-// import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+//import * as ng from 'angular';
+import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+import { UiInputNumberController } from '../number/component';
 
-// require('./style.scss');
+require('./style.scss');
 
-// interface IUiInputPercentageOptions extends IUiInputCommonOptions {
+export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 
-//     precision: number; //   The number of decimal places to display
+}
 
-// }
+export class UiInputPercentageController extends UiInputNumberController {
 
-// class Controller extends UiInputCommonController<Number, IUiInputPercentageOptions> implements ng.IController {
+    parse(value): number {
+        let parsedValue: number = super.parse(value);
+        if (parsedValue != null) {
+            parsedValue /= 100;
+        }
+        return parsedValue
+    }
 
-//     parse(value): number {
-//         return value / 100;
-//     }
+    format(value): string {
+        if (value != null) {
+            return super.format(value * 100);
+        } else {
+            return null;
+        }
+    }
 
-//     format(value): number {
-//         return value * 100;
-//     }
+}
 
-//     $onInit() {
-//         super.$onInit();
+export class UiInputPercentageComponent extends UiInputCommonComponent implements ng.IComponentOptions {
 
-//         this.ngModel.$parsers.push((value) => this.parse(value));
-//         this.ngModel.$formatters.push((value) => this.format(value));
-//     }
-// }
+    controller = UiInputPercentageController;
+    template = require('./template.html');
 
-// class Component extends UiInputCommonComponent implements ng.IComponentOptions {
-
-//     controller = Controller;
-//     template = require('./template.html');
-
-// }
-
-// export default (module: ng.IModule) => {
-
-//     module.component('uiInputPercentage', new Component());
-
-// };
+}

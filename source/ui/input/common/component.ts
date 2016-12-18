@@ -1,24 +1,45 @@
+import * as lodash from 'lodash';
 //declare var $: JQueryStatic;
 
 require("./style.scss");
 
 export interface IUiInputCommonOptions {
 
-    placeholder: string;    //  The string to display on the input when there is no value
+    placeholder?: string;    //  The string to display on the input when there is no value
 
 }
 
-export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOptions> implements ng.IController {
+export abstract class UiInputCommonController<TValue, TOptions extends IUiInputCommonOptions> implements ng.IController {
 
     static $inject = ['$element'];
 
     ngModel: ng.INgModelController;
-    options: TOptions;
+
+    protected defaultOptions: TOptions;
+
+    private _options: TOptions;
+    protected get options(): TOptions {
+
+        if (!this._options) {
+            this._options = lodash.merge({}, this.defaultOptions, this.userOptions);
+        }
+        return this._options;
+    }
+
+
+    userOptions: TOptions;
+
     value: TValue;
 
-    constructor(protected $element: JQuery) { }
+    constructor(protected $element: JQuery) {
+        this.defaultOptions = <TOptions>{};
+    }
 
     $onInit() {
+
+
+        this.ngModel.$parsers.push((value) => this.parse(value));
+        this.ngModel.$formatters.push((value) => this.format(value));
 
         //  Add a common class for styling
         this.$element.addClass("ui-input");
@@ -39,6 +60,10 @@ export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOpti
 
     }
 
+    abstract format(value: TValue); string;
+
+    abstract parse(value: string); TValue;
+
     focus(force: boolean) {
         this.$element.addClass("focussed");
     }
@@ -52,7 +77,7 @@ export class UiInputCommonController<TValue, TOptions extends IUiInputCommonOpti
 export abstract class UiInputCommonComponent implements ng.IComponentOptions {
 
     bindings: { [slot: string]: string } = {
-        options: '='
+        userOptions: '=options'
     };
 
     require: { [controller: string]: string } = {

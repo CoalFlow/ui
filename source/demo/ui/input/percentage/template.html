@@ -2,9 +2,8 @@
     <div class="col">
         ui-input-percentage
     </div>
-    <div class="col" style="text-align: right">
-        {{$ctrl.percentageValue}}
-    </div>
+    <div class="col" style="text-align: right"> {{$ctrl.percentageValue}}
+</div>
 </div>
 <div class=" row ">
     <div class="col ">
@@ -20,5 +19,29 @@
     </div>
     <div class="col ">
         <ui-input-percentage ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ng-required="true "></ui-input-percentage>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (0)
+    </div>
+    <div class="col ">
+        <ui-input-percentage ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 0 } "></ui-input-percentage>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (1)
+    </div>
+    <div class="col ">
+        <ui-input-percentage ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 1 } "></ui-input-percentage>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (2)
+    </div>
+    <div class="col ">
+        <ui-input-percentage ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 2 } "></ui-input-percentage>
     </div>
 </div>

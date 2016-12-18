@@ -2,9 +2,8 @@
     <div class="col">
         ui-input-number
     </div>
-    <div class="col" style="text-align: right">
-        {{$ctrl.numberValue}}
-    </div>
+    <div class="col" style="text-align: right"> {{$ctrl.numberValue}}
+</div>
 </div>
 <div class=" row ">
     <div class="col ">
@@ -22,6 +21,31 @@
         <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' } " ng-required="true "></ui-input-number-spinner>
     </div>
 </div>
+<div class=" row ">
+    <div class="col ">
+        with precision (0)
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 0 } "></ui-input-number-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (1)
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 1, increment: 0.1 } "></ui-input-number-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (2)
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 2, increment: 0.01 } "></ui-input-number-spinner>
+    </div>
+</div>
+
 <div class="row ">
     <div class="col ">
         ui-validate ( > 0 )

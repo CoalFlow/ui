@@ -9,6 +9,8 @@ declare var angular: ng.IAngularStatic;
 // import percentage from './input/percentage/component';
 import { UiInputTextComponent } from './input/text/component';
 import { UiInputNumberComponent } from './input/number/component';
+import { UiInputNumberSpinnerComponent } from './input/number-spinner/component';
+import { UiInputPercentageComponent } from './input/percentage/component';
 
 let app = angular.module('ui', [
 
@@ -16,7 +18,10 @@ let app = angular.module('ui', [
 
 app
     .component("uiInputText", new UiInputTextComponent())
-    .component("uiInputNumber", new UiInputNumberComponent());
+    .component("uiInputNumber", new UiInputNumberComponent())
+    .component("uiInputNumberSpinner", new UiInputNumberSpinnerComponent())
+    .component("uiInputPercentage", new UiInputPercentageComponent())
+    ;
 
 
 // text(app);

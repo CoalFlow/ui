@@ -1,28 +1,70 @@
-// //import * as ng from 'angular';
-// import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
-// import { IUiInputNumberOptions } from '../number/component';
+import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+import { IUiInputNumberOptions, UiInputNumberController } from '../number/component';
+import * as ng from 'angular';
 
-// require('./style.scss');
-// require('./ui-embedded.css');
+require('./style.scss');
+require('./ui-embedded.css');
 
+export interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
 
-// interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
+}
 
-// }
+export class UiInputNumberSpinnerController extends UiInputNumberController {
 
-// class Controller extends UiInputCommonController<Number, IUiInputNumberSpinnerOptions> implements ng.IController {
+    $input: JQuery;
 
-// }
+    $postLink() {
 
-// class Component extends UiInputCommonComponent implements ng.IComponentOptions {
+        //  get the html element that stores the viewvalue
+        this.$input = $(this.$element.find('input'));
 
-//     controller = Controller;
-//     template = require('./template.html');
+        //  bind clicks on the spinners
+        this.$element
+            .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.increment())
+            .on('mousedown', '.decrementer', (e: JQueryEventObject) => this.decrement());
 
-// }
+    }
 
-// export default (module: ng.IModule) => {
+    increment(): void {
+        this.changeValueBy(this.options.increment);
+    }
 
-//     module.component('uiInputNumberSpinner', new Component());
+    decrement(): void {
+        this.changeValueBy(this.options.increment * -1);
+    }
 
-// };
+    changeValueBy(value: number) {
+
+        //  Get the current value from the DOM
+        let currentValue = this.parse(this.$input.val());
+
+        //  Set it to zero if it is non-numeric
+        if (currentValue == null) {
+            currentValue = 0;
+        }
+
+        //  Change the value
+        currentValue += value;
+
+        //  Set the view value
+        this.setViewValue(currentValue);
+
+    }
+
+    setViewValue(value: number) {
+
+        //  Format the value and write it back to the DOM
+        this.$input.val(this.format(value));
+
+        //  Set the view value on ngModel (this may be rejected if it is invalid, end result will be null)
+        this.ngModel.$setViewValue(this.$input.val());
+
+    }
+}
+
+export class UiInputNumberSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {
+
+    controller = UiInputNumberSpinnerController;
+    template = require('./template.html');
+
+}

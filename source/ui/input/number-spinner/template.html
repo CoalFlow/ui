@@ -1,8 +1,7 @@
 <div>
     <div class="addon" style="font-size: 8pt;">
-        <i class="icon-spinner-up"></i>
-        <i class="icon-spinner-down"></i>
-
-    </div>
-    <input placeholder="{{ $ctrl.options.placeholder }}" type="number" />
+<i class="icon-spinner-down incrementer"></i>
+<i class="icon-spinner-up decrementer"></i>
+</div>
+<input placeholder="{{ $ctrl.options.placeholder }}" step="{{ $ctrl.options.increment }}" type="number" />
 </div>
