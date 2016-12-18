@@ -27,11 +27,13 @@ $invalidBorderColor:#f00;
                 border: solid 0px transparent;
                 background: transparent;
                 outline: none;
+                font-size: 10pt;
                 &::-webkit-input-placeholder,
                 &:-moz-placeholder
                 &::-moz-placeholder,
                 &:-ms-input-placeholder {
                 color: #ccc !important;
+                padding: 0px;
             }
         }
 
