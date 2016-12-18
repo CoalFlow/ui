@@ -1,5 +1,5 @@
 {
-  "name": "ui-new",
+  "name": "ui",
   "version": "0.0.39",
   "description": "A package of common ui features written for CoalFlow.",
   "main": "build/index.js",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
-  "typings": "build/ui",
+  "typings": "build/",
   "author": "",
   "license": "ISC",
   "devDependencies": {
