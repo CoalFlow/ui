@@ -131,7 +131,13 @@ module.exports = {
 
         //  The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base.
         contentBase: path.resolve("./build")
+    },
+  // specify option using `ts` property
+  ts: {
+    "compilerOptions": {
+        "declaration": true
     }
+  }        
 };
 
 

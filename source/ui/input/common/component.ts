@@ -1,4 +1,5 @@
-declare var $: JQueryStatic;
+//declare var $: JQueryStatic;
+
 require("./style.scss");
 
 export interface IUiInputCommonOptions {
