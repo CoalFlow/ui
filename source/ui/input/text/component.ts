@@ -1,22 +1,23 @@
-// //import * as ng from 'angular';
-// import { IUiInputCommonOptions, UiInputCommonController, UiInputCommonComponent } from '../common/component';
+//import * as ng from 'angular';
+import { IUiInputCommonOptions, UiInputCommonController, UiInputCommonComponent } from '../common/component';
 
-// require('./style.scss');
+require('./style.scss');
 
-// interface IUiInputTextOptions extends IUiInputCommonOptions {
+export interface IUiInputTextOptions extends IUiInputCommonOptions {
 
-// }
+}
 
-// class Controller extends UiInputCommonController<String, IUiInputTextOptions> implements ng.IController {
+export class UiInputTextController extends UiInputCommonController<String, IUiInputTextOptions> implements ng.IController {
 
-// }
+}
 
-// class Component extends UiInputCommonComponent {
+export class UiInputTextComponent extends UiInputCommonComponent {
 
-//     controller = Controller;
-//     template = require('./template.html');
+    controller = UiInputTextController;
+    template = require('./template.html');
 
-// }
+}
+
 
 // export default (module: ng.IModule) => {
 
