@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const WebpackMd5Hash = require('webpack-md5-hash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var chunkOrder = ["dependencies", "ui", "demo"];
@@ -27,11 +26,6 @@ module.exports = {
 
         new webpack.optimize.DedupePlugin(),
 
-        // //  Hash the files using MD5 so that their names change when the content changes
-        // //  https://www.npmjs.com/package/webpack-md5-hash
-        // new WebpackMd5Hash(),
-
-
         //  Process the HTML file(s) - https://www.npmjs.com/package/html-webpack-plugin
         new HtmlWebpackPlugin({
 
@@ -55,19 +49,15 @@ module.exports = {
         //  Extract the CSS into it's own file
         new ExtractTextPlugin("styles.css"),
 
-        //  https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     names: ["dependencies"]
-        // }),
-
         new webpack.ProvidePlugin({
             "window.jQuery": "jquery",   //  This exposes jQuery to angular so that it replaces jqLite
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
             ng: 'angular'
-        })
+        }),
 
+        new DtsBundlePlugin()
     ],
 
     resolve: {
@@ -80,15 +70,6 @@ module.exports = {
     //  Options affecting the normal modules
     module: {
 
-        //  An array of applied pre loaders.
-        // preLoaders: [
-        //     {
-        //         test: /\.tsx?$/,
-        //         exclude: 'node_modules',
-        //         loader: 'tslint-loader'
-        //     }
-
-        // ],
 
         //  An array of automatically applied loaders.
         loaders: [
@@ -142,4 +123,22 @@ module.exports = {
         //  The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base.
         contentBase: path.resolve("./build")
     }
-}
+};
+
+
+//  Configure the dts-bundle plugin
+function DtsBundlePlugin() { }
+
+DtsBundlePlugin.prototype.apply = function (compiler) {
+    compiler.plugin('done', function () {
+        var dts = require('dts-bundle');
+
+        dts.bundle({
+            name: 'ui',
+            main: 'build/source/ui/**/*.d.ts',
+            out: '../../ui.d.ts',
+            removeSource: true,
+            outputAsModuleFolder: true
+        });
+    });
+};
