@@ -3,17 +3,19 @@
   width: 100%;
   border: solid 1px #ddd;
   border-radius: 4px; }
-  .ui-input > div input {
+  .ui-input > div div.control {
     display: table-cell;
-    width: 100%;
-    border: solid 0px transparent;
-    background: transparent;
-    padding: 8px;
-    outline: none; }
-    .ui-input > div input::-webkit-input-placeholder,
-    .ui-input >
-div input:-moz-placeholder .ui-input > div input::-moz-placeholder, .ui-input > div input:-ms-input-placeholder {
-      color: #ccc !important; }
+    width: 100%; }
+    .ui-input > div div.control input {
+      width: 100%;
+      border: solid 0px transparent;
+      background: transparent;
+      padding: 8px;
+      outline: none; }
+      .ui-input > div div.control input::-webkit-input-placeholder,
+      .ui-input >
+div div.control input:-moz-placeholder .ui-input > div div.control input::-moz-placeholder, .ui-input > div div.control input:-ms-input-placeholder {
+        color: #ccc !important; }
   .ui-input > div .addon {
     display: table-cell;
     vertical-align: middle;

@@ -3,24 +3,32 @@ $invalidBorderColor:#f00;
 
 .ui-input {
     > div {
+   //     position:relative;
         display: table;
         width: 100%;
         border: solid 1px#ddd;
         border-radius: 4px;
 
-        input {
+        div.control {
             display: table-cell;
             width: 100%;
-            border: solid 0px transparent;
-            background: transparent;
-            padding:8px;
-            outline: none;
-            &::-webkit-input-placeholder,
-            &:-moz-placeholder
-            &::-moz-placeholder,
-            &:-ms-input-placeholder {
-                color: #ccc !important;
+
+            input {
+           //     display: table-cell;
+            //    width: auto;
+             width: 100%;
+                border: solid 0px transparent;
+                background: transparent;
+                padding:8px;
+                outline: none;
+                &::-webkit-input-placeholder,
+                &:-moz-placeholder
+                &::-moz-placeholder,
+                &:-ms-input-placeholder {
+                    color: #ccc !important;
+                }
             }
+
         }
         .addon {
             display: table-cell;

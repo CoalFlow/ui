@@ -109,7 +109,7 @@
 /* 11 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" type=\\\" text \\\" />\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/text/template.html\n// module id = 11\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/text/template.html?");
+	eval("module.exports = \"<div>\\r\\n    <div class=\\\"control\\\">\\r\\n        <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" type=\\\" text \\\" />\\r\\n\\r\\n    </div>\\r\\n\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/text/template.html\n// module id = 11\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/text/template.html?");
 
 /***/ },
 /* 12 */
@@ -142,7 +142,7 @@
 /* 21 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\r\\n    <div class=\\\"addon\\\" style=\\\"font-size: 8pt;\\\">\\r\\n<i class=\\\"icon-spinner-down incrementer\\\"></i>\\r\\n<i class=\\\"icon-spinner-up decrementer\\\"></i>\\r\\n</div>\\r\\n<input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number-spinner/template.html\n// module id = 21\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number-spinner/template.html?");
+	eval("module.exports = \"<div>\\r\\n    <div class=\\\"addon\\\" style=\\\"font-size: 8pt;\\\">\\r\\n<i class=\\\"icon-spinner-down incrementer\\\"></i>\\r\\n<i class=\\\"icon-spinner-up decrementer\\\"></i>\\r\\n</div>\\r\\n<div class=\\\"control\\\">\\r\\n\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" step=\\\"{{ $ctrl.options.increment }}\\\" type=\\\"number\\\" />\\r\\n    <div>\\r\\n    </div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number-spinner/template.html\n// module id = 21\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number-spinner/template.html?");
 
 /***/ },
 /* 22 */
