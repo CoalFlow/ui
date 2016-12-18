@@ -1,4 +1,4 @@
-//declare var ng: ng.IAngularStatic;
+declare var angular: ng.IAngularStatic;
 
 //import * as angular from 'angular';
 //import * as $ from 'jquery';
