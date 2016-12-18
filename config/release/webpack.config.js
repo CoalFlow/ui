@@ -1,21 +1,18 @@
 const path = require('path');
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var chunkOrder = ["dependencies", "ui", "demo"];
 
 module.exports = {
 
     entry: {
         //   dependencies: "./source/demo/dependencies.ts",
-        lib: "./source/ui/lib.ts",
+        // lib: "./source/ui/lib.ts",
         index: "./source/ui/module.ts"
         //    demo: "./source/demo/index.ts"
     },
 
     devtool: 'eval',
-
 
     output: {
         path: path.resolve("./build/"),
@@ -48,19 +45,19 @@ module.exports = {
         // }),
 
         //  Extract the CSS into it's own file
-        new ExtractTextPlugin("style.css"),
+        new ExtractTextPlugin("index.css"),
 
-        new webpack.ProvidePlugin({
-            "window.jQuery": "jquery",   //  This exposes jQuery to angular so that it replaces jqLite
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
-            ng: 'angular'
-        }),
+        // new webpack.ProvidePlugin({
+        //     "window.jQuery": "jquery",   //  This exposes jQuery to angular so that it replaces jqLite
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     "window.jQuery": "jquery",
+        //     ng: 'angular'
+        // }),
 
-        new CommonsChunkPlugin({
-            name: "lib"
-        }),
+        // new CommonsChunkPlugin({
+        //     name: "lib"
+        // }),
 
         new DtsBundlePlugin()
     ],

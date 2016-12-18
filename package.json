@@ -4,8 +4,7 @@
   "description": "A package of common ui features written for CoalFlow.",
   "main": "build/index.js",
   "files": [
-    "build/index.*",
-    "build/style.css"
+    "build/index.*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
