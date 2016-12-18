@@ -5,12 +5,15 @@
   border-radius: 4px; }
   .ui-input > div div.control {
     display: table-cell;
-    width: 100%; }
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    padding-right: 4px; }
     .ui-input > div div.control input {
       width: 100%;
       border: solid 0px transparent;
       background: transparent;
-      padding: 8px;
       outline: none; }
       .ui-input > div div.control input::-webkit-input-placeholder,
       .ui-input >
