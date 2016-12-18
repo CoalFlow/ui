@@ -2,7 +2,7 @@
   "name": "ui-new",
   "version": "0.0.37",
   "description": "A package of common ui features written for CoalFlow.",
-  "main": "build/uiNew.js",
+  "main": "build/ui.js",
   "files": [
     "build/"
   ],
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://coalflow.visualstudio.com/DefaultCollection/Curragh/_git/ui"
   },
-  "typings": "build/source/ui-new/module",
+  "typings": "build/ui",
   "author": "",
   "license": "ISC",
   "devDependencies": {
