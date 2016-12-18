@@ -67,7 +67,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\r\n//import * as angular from 'angular';\r\n//import * as $ from 'jquery';\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar component_1 = __webpack_require__(1);\r\nvar app = angular.module('ui', []);\r\napp.component(\"uiInputText\", new component_1.UiInputTextComponent());\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
+	eval("\"use strict\";\r\n//import * as angular from 'angular';\r\n//import * as $ from 'jquery';\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar component_1 = __webpack_require__(1);\r\nvar component_2 = __webpack_require__(10);\r\nvar app = angular.module('ui', []);\r\napp\r\n    .component(\"uiInputText\", new component_1.UiInputTextComponent())\r\n    .component(\"uiInputNumber\", new component_2.UiInputNumberComponent());\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
 
 /***/ },
 /* 1 */
@@ -98,6 +98,21 @@
 /***/ function(module, exports) {
 
 	eval("module.exports = \"<div>\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" type=\\\" text \\\" />\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/text/template.html\n// module id = 9\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/text/template.html?");
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("\"use strict\";\r\nvar __extends = (this && this.__extends) || function (d, b) {\r\n    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];\r\n    function __() { this.constructor = d; }\r\n    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n};\r\nvar component_1 = __webpack_require__(2);\r\n__webpack_require__(11);\r\nvar UiInputNumberController = (function (_super) {\r\n    __extends(UiInputNumberController, _super);\r\n    function UiInputNumberController() {\r\n        return _super.apply(this, arguments) || this;\r\n    }\r\n    return UiInputNumberController;\r\n}(component_1.UiInputCommonController));\r\nexports.UiInputNumberController = UiInputNumberController;\r\nvar UiInputNumberComponent = (function (_super) {\r\n    __extends(UiInputNumberComponent, _super);\r\n    function UiInputNumberComponent() {\r\n        var _this = _super.apply(this, arguments) || this;\r\n        _this.controller = UiInputNumberController;\r\n        _this.template = __webpack_require__(13);\r\n        return _this;\r\n    }\r\n    return UiInputNumberComponent;\r\n}(component_1.UiInputCommonComponent));\r\nexports.UiInputNumberComponent = UiInputNumberComponent;\r\n// export default (module: ng.IModule) => {\r\n//     module.component('uiInputNumber', new Component());\r\n// };\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number/component.ts\n// module id = 10\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number/component.ts?");
+
+/***/ },
+/* 11 */
+3,
+/* 12 */,
+/* 13 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div>\\r\\n    <input placeholder=\\\"{{ $ctrl.options.placeholder }}\\\" type=\\\"number\\\" />\\r\\n</div>\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/input/number/template.html\n// module id = 13\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/input/number/template.html?");
 
 /***/ }
 /******/ ])));

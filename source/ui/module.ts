@@ -8,12 +8,16 @@ declare var angular: ng.IAngularStatic;
 // import numberSpinner from './input/number-spinner/component';
 // import percentage from './input/percentage/component';
 import { UiInputTextComponent } from './input/text/component';
+import { UiInputNumberComponent } from './input/number/component';
 
 let app = angular.module('ui', [
 
 ]);
 
-app.component("uiInputText", new UiInputTextComponent());
+app
+    .component("uiInputText", new UiInputTextComponent())
+    .component("uiInputNumber", new UiInputNumberComponent());
+
 
 // text(app);
 // number(app);

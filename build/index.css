@@ -25,3 +25,8 @@ div input:-moz-placeholder .ui-input > div input::-moz-placeholder, .ui-input > 
 
 .ui-input.ng-invalid > div {
   border: solid 1px #f00; }
+ui-input-number > div input {
+  text-align: right; }
+  ui-input-number > div input::-webkit-inner-spin-button, ui-input-number > div input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }

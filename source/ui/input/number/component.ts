@@ -1,24 +1,23 @@
-// //import * as ng from 'angular';
-// import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
-// require('./style.scss');
+require('./style.scss');
 
-// export interface IUiInputNumberOptions extends IUiInputCommonOptions {
+export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 
-//     precision: number; //   The number of decimal places to display
+    precision: number; //   The number of decimal places to display
 
-// }
+}
 
-// class Controller extends UiInputCommonController<Number, IUiInputNumberOptions> implements ng.IController {
+export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
 
-// }
+}
 
-// class Component extends UiInputCommonComponent implements ng.IComponentOptions {
+export class UiInputNumberComponent extends UiInputCommonComponent {
 
-//     controller = Controller;
-//     template = require('./template.html');
+    controller = UiInputNumberController;
+    template = require('./template.html');
 
-// }
+}
 
 // export default (module: ng.IModule) => {
 

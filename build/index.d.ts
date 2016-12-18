@@ -27,7 +27,15 @@ export abstract class UiInputCommonComponent implements ng.IComponentOptions {
 
 
 
-
+export interface IUiInputNumberOptions extends IUiInputCommonOptions {
+    precision: number;
+}
+export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
+}
+export class UiInputNumberComponent extends UiInputCommonComponent {
+    controller: typeof UiInputNumberController;
+    template: any;
+}
 
 
 
