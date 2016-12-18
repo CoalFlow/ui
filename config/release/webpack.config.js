@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var chunkOrder = ["dependencies", "ui", "demo"];
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
 
@@ -59,7 +60,11 @@ module.exports = {
         //     name: "lib"
         // }),
 
-        new DtsBundlePlugin()
+        new DtsBundlePlugin(),
+
+        new WebpackShellPlugin({
+            onBuildEnd: ['rimraf ./build/source']
+        })
     ],
 
     resolve: {
