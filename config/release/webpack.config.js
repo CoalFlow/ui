@@ -8,9 +8,9 @@ var chunkOrder = ["dependencies", "ui", "demo"];
 module.exports = {
 
     entry: {
-        dependencies: "./source/demo/dependencies.ts",
-        ui: "./source/ui/module.ts",
-        demo: "./source/demo/index.ts"
+        //   dependencies: "./source/demo/dependencies.ts",
+        index: "./source/ui/module.ts",
+        //    demo: "./source/demo/index.ts"
     },
 
     devtool: 'eval',
@@ -26,25 +26,25 @@ module.exports = {
 
         new webpack.optimize.DedupePlugin(),
 
-        //  Process the HTML file(s) - https://www.npmjs.com/package/html-webpack-plugin
-        new HtmlWebpackPlugin({
+        // //  Process the HTML file(s) - https://www.npmjs.com/package/html-webpack-plugin
+        // new HtmlWebpackPlugin({
 
-            //  Webpack require path to the template
-            template: './source/demo/index.html',
+        //     //  Webpack require path to the template
+        //     template: './source/demo/index.html',
 
-            //   Inject all assets into the given template
-            inject: 'head',
+        //     //   Inject all assets into the given template
+        //     inject: 'head',
 
-            //  Customise the order of injection of scripts into the html
-            chunksSortMode: function (a, b) {  //alphabetical order
-                if (chunkOrder.indexOf(a.names[0]) > chunkOrder.indexOf(b.names[0])) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            }
+        //     //  Customise the order of injection of scripts into the html
+        //     chunksSortMode: function (a, b) {  //alphabetical order
+        //         if (chunkOrder.indexOf(a.names[0]) > chunkOrder.indexOf(b.names[0])) {
+        //             return 1;
+        //         } else {
+        //             return -1;
+        //         }
+        //     }
 
-        }),
+        // }),
 
         //  Extract the CSS into it's own file
         new ExtractTextPlugin("styles.css"),
@@ -136,7 +136,7 @@ DtsBundlePlugin.prototype.apply = function (compiler) {
         dts.bundle({
             name: 'ui',
             main: 'build/source/ui/**/*.d.ts',
-            out: '../../ui.d.ts',
+            out: '../../index.d.ts',
             removeSource: true,
             outputAsModuleFolder: true
         });

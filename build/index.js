@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	eval("\"use strict\";\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar app = angular.module('ui', []);\r\nconsole.log(\"initializing ui\");\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 2\n//# sourceURL=webpack:///./source/ui/module.ts?");
+	eval("\"use strict\";\r\n// import text from './input/text/component';\r\n// import number from './input/number/component';\r\n// import numberSpinner from './input/number-spinner/component';\r\n// import percentage from './input/percentage/component';\r\nvar app = angular.module('ui', []);\r\nconsole.log(\"initializing ui\");\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./source/ui/module.ts\n// module id = 0\n// module chunks = 0\n//# sourceURL=webpack:///./source/ui/module.ts?");
 
 /***/ }
 /******/ ]);
