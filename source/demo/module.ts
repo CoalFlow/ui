@@ -10,7 +10,8 @@ export default (): ng.IModule => {
 
     let app = ng.module('demo', [
         'ngRoute',
-        'ui'
+        'ui',
+        'ui.validate'
     ]);
 
     routes(app);

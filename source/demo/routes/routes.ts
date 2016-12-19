@@ -30,6 +30,10 @@ export default (mod: ng.IModule) => {
                 .when('/ui/input/select', {
                     template: '<demo-ui-input-select></demo-ui-input-select>'
                 })
+                
+                .when('/ui/input/datetime', {
+                    template: '<demo-ui-input-datetime></demo-ui-input-datetime>'
+                })
 
                 .when('/b', {
                     template: '<page-b></page-b>'

@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col">
+        ui-input-number
+    </div>
+    <div class="col" style="text-align: right">
+        {{$ctrl.dateValue}}
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        basic
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue " options=" { placeholder: 'enter date and time...' } " ng-readonly></ui-input-datetime>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        ng-required
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue " options=" { placeholder: 'enter date and time...' } " ng-required="true "></ui-input-datetime>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        ui-validate ( > 30/12/2016 10:00 )
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue" options=" { placeholder: 'enter date and time...', min: $ctrl.dateMinValue } " ui-validate="'$value > $ctrl.dateMinValue'"></ui-input-datetime>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col ">
+        model validate ( > 30/12/2016 10:00 )
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue" options=" { placeholder: 'enter date and time...', min: $ctrl.dateMinValue } " ></ui-input-datetime>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        model validate ( 30/12/2016 10:00 < date < 31/01/2017 16:00)
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue" options=" { placeholder: 'enter date and time...', min: $ctrl.dateMinValue, max: $ctrl.dateMaxValue } " ></ui-input-datetime>
+    </div>
+</div>

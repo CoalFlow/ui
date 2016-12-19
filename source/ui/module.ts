@@ -1,3 +1,4 @@
+import {UiInputDateTimeComponent} from "./input/datetime/component";
 declare var angular: ng.IAngularStatic;
 
 //import * as angular from 'angular';
@@ -23,7 +24,8 @@ app
     .component("uiInputNumberSpinner", new UiInputNumberSpinnerComponent())
     .component("uiInputPercentage", new UiInputPercentageComponent())
     .component("uiInputSelect", new UiInputSelectComponent())
-    ;
+    .component("uiInputDatetime", new UiInputDateTimeComponent())
+;
 
 // text(app);
 // number(app);
