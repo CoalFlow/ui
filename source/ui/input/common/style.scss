@@ -1,17 +1,13 @@
 $focussedBorderColor: #4ab2f7;
 $invalidBorderColor:#f00;
-
 .ui-input {
-
     font-size: 10pt;
-
-    > div {
+    >div {
         display: table;
         width: 100%;
         border: solid 1px#ddd;
         border-radius: 4px;
         border-spacing: 0;
-
         div.control {
             display: table-cell;
             width: 100%;
@@ -20,7 +16,7 @@ $invalidBorderColor:#f00;
             padding-left: 4px;
             padding-right: 4px;
             vertical-align: middle;
-
+            select,
             input {
                 position: relative;
                 top: 1px;
@@ -30,31 +26,29 @@ $invalidBorderColor:#f00;
                 outline: none;
                 font-size: 10pt;
                 &::-webkit-input-placeholder,
-                &:-moz-placeholder
-                &::-moz-placeholder,
+                &:-moz-placeholder &::-moz-placeholder,
                 &:-ms-input-placeholder {
-                color: #ccc !important;
-                padding: 0px;
+                    color: #ccc !important;
+                    padding: 0px;
+                }
             }
-        }
-
         }
         .addon {
             display: table-cell;
-            vertical-align:middle;
-            width:1%;
+            vertical-align: middle;
+            width: 1%;
             padding: 0px;
             padding-left: 4px;
             padding-right: 4px;
         }
     }
     &.focussed {
-        >   div {
+        >div {
             border: solid 1px $focussedBorderColor;
         }
     }
     &.ng-invalid {
-        >   div {
+        >div {
             border: solid 1px $invalidBorderColor;
         }
     }

@@ -27,6 +27,10 @@ export default (mod: ng.IModule) => {
                     template: '<demo-ui-input-percentage></demo-ui-input-percentage>'
                 })
 
+                .when('/ui/input/select', {
+                    template: '<demo-ui-input-select></demo-ui-input-select>'
+                })
+
                 .when('/b', {
                     template: '<page-b></page-b>'
                 })

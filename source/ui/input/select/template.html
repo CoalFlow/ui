@@ -1,0 +1,7 @@
+<div>
+    <div class="control">
+        <select placeholder="{{ $ctrl.options.placeholder }}" ng-options="item.value as item.label for item in $ctrl.items" ng-model="$ctrl.value"
+            ng-change="$ctrl.changeValue()">
+        </select>
+    </div>
+</div>

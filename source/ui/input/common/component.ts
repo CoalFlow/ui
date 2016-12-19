@@ -17,7 +17,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 
     protected defaultOptions: TOptions;
 
-    private _options: TOptions;
+    protected _options: TOptions;
     protected get options(): TOptions {
 
         if (!this._options) {
@@ -77,7 +77,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 export abstract class UiInputCommonComponent implements ng.IComponentOptions {
 
     bindings: { [slot: string]: string } = {
-        userOptions: '=options'
+        userOptions: '<options'
     };
 
     require: { [controller: string]: string } = {
