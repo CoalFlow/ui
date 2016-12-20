@@ -1,3 +1,5 @@
+declare var angular: ng.IAngularStatic;
+
 import * as lodash from 'lodash';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
@@ -15,18 +17,77 @@ export interface IUiInputSelectOptions extends IUiInputCommonOptions {
 
 export class UiInputSelectController extends UiInputCommonController<Number, IUiInputSelectOptions> {
 
-    items: any[];
-    ngOptions: any;
+    //  exposes this controller to its parent
+    ctrl: any;
+
+    private _items: any[] = undefined;
+
+    get items(): any[] {
+        return this.options.items;
+    }
+
+    set items(value: any[]) {
+        this.options.items = value;
+        this._itemOptions = undefined;
+    }
+
+    _itemOptions: any[] = undefined;
+    get itemOptions() :any[] {
+
+        if (this._itemOptions == undefined) {
+
+            let valueFunction: (item: any) => any;
+
+            if (lodash.isFunction(this.options.valueFunc)) {
+                valueFunction = this.options.valueFunc;
+            } else if (lodash.isString(this.options.valueProp)) {
+                valueFunction = (item: any) => {
+                    return item[<string>this.options.valueProp];
+                }
+            } else {
+                valueFunction = (item: any) => item;
+            }
+
+            let labelFunction: (item: any) => string;
+
+            if (lodash.isFunction(this.options.labelFunc)) {
+                labelFunction = this.options.labelFunc;
+            } else if (lodash.isString(this.options.labelProp)) {
+                labelFunction = (item: any) => {
+                    return item[<string>this.options.labelProp];
+                }
+            } else {
+                labelFunction = (item: any) => <string>item;
+            }
+
+            this._itemOptions = lodash(this.options.items).map((item) => {
+
+                return {
+                    value: valueFunction(item),
+                    label: labelFunction(item)
+                };
+
+            }).value();
+        }
+
+        return this._itemOptions;
+    }
 
     constructor($element: ng.IAugmentedJQuery) {
         super($element);
+
     }
 
-    changeValue() {
 
-        //  Set the view value on ngModel (this may be rejected if it is invalid, end result will be null)
+    _value: any = undefined;
+
+    get value() : any {
+        return this._value;
+    }
+
+    set value(value) {
+        this._value = value;
         this.ngModel.$setViewValue(this.value);
-
     }
 
     parse(value: any): any {
@@ -37,63 +98,18 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
         return value;
     }
 
-    $onChanges(changes) {
-        this._options = null;
-
-        this.resetItems();
-    }
-
-    resetItems() {
-        //  generate the value  and keyfunction
-        let valueFunction: (item: any) => any;
-
-        if (lodash.isFunction(this.options.valueFunc)) {
-            valueFunction = this.options.valueFunc;
-        } else if (lodash.isString(this.options.valueProp)) {
-            valueFunction = (item: any) => {
-                return item[<string>this.options.valueProp];
-            }
-        } else {
-            valueFunction = (item: any) => item;
-        }
-
-        let labelFunction: (item: any) => string;
-
-        if (lodash.isFunction(this.options.labelFunc)) {
-            labelFunction = this.options.labelFunc;
-        } else if (lodash.isString(this.options.labelProp)) {
-            labelFunction = (item: any) => {
-                return item[<string>this.options.labelProp];
-            }
-        } else {
-            labelFunction = (item: any) => <string>item;
-        }
-
-        this.items = lodash(this.options.items).map((item) => {
-
-            return {
-                value: valueFunction(item),
-                label: labelFunction(item)
-            };
-
-        }).value();
-
-    }
-
-
     $onInit() {
         super.$onInit();
 
-        //  parse the items
-
-        this.resetItems();
-
-        this.ngModel.$render = () => {
-            this.value = this.ngModel.$viewValue;
+        //  set the controller
+        if (!angular.isUndefined(this.ctrl)) {
+            this.ctrl = this;
         }
 
-        console.log(this.ngOptions);
-
+        //  bind the ngModel's $render function to this value
+        this.ngModel.$render = () => {
+            this._value = this.ngModel.$viewValue;
+        }
     }
 
 }
@@ -106,13 +122,8 @@ export class UiInputSelectComponent extends UiInputCommonComponent {
     constructor() {
         super();
 
-        this.require["ngOptions"] = "?=ngOptions";
+        this.bindings["ctrl"] = "=?";
 
     }
+
 }
-
-// export default (module: ng.IModule) => {
-
-//     module.component('uiInputNumber', new Component());
-
-// };

@@ -26,7 +26,7 @@
         basic (strings)
     </div>
     <div class="col ">
-        <ui-input-select ng-model="$ctrl.selectedValue" options=" { placeholder: 'enter percentage...', items: ['1', '2', '3'] } " ng-options="item in items"></ui-input-select>
+        <ui-input-select ng-model="$ctrl.selectedValue" options=" { placeholder: 'enter percentage...', items: ['1', '2', '3'] }"></ui-input-select>
     </div>
 </div>
 <div class=" row ">
@@ -50,7 +50,7 @@
         basic (objects)
     </div>
     <div class="col ">
-        <ui-input-select ng-model="$ctrl.selectedValue" options=" { placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', valueProp: 'value' } "></ui-input-select>
+        <ui-input-select ng-model="$ctrl.selectedValue" options="{ placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', valueProp: 'value' } "></ui-input-select>
     </div>
 </div>
 <div class=" row ">
@@ -58,6 +58,6 @@
         async (objects)
     </div>
     <div class="col ">
-        <ui-input-select ng-model="$ctrl.selectedValue" options="$ctrl.asyncOptions"></ui-input-select>
+        <ui-input-select ctrl="$ctrl.asyncSelect" ng-model="$ctrl.selectedValue" options="$ctrl.asyncOptions"></ui-input-select>
     </div>
 </div>

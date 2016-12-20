@@ -11,7 +11,9 @@ class Controller implements ng.IController {
     objectItems: any[] = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }]
 
     asyncOptions: any = {
-        items: []
+        items: [],
+        valueFunc: (item) => item.value,
+        labelFunc: (item) => item.label
     };
 
     constructor(protected $timeout: ng.ITimeoutService) {
@@ -19,15 +21,15 @@ class Controller implements ng.IController {
 
     }
 
+    asyncSelect: any = null;
+
     $onInit() {
 
         this.$timeout(() => {
-            this.asyncOptions.items = this.objectItems;
-            this.asyncOptions = ng.extend({}, this.asyncOptions);
-            console.log('options');
-            console.log(this.asyncOptions);
 
-        }, 1000)
+            this.asyncSelect.items = this.objectItems;
+
+        }, 5000)
 
     }
 

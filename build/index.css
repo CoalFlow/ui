@@ -14,6 +14,7 @@
       padding-left: 4px;
       padding-right: 4px;
       vertical-align: middle; }
+      .ui-input > div div.control select,
       .ui-input > div div.control input {
         position: relative;
         top: 1px;
@@ -22,9 +23,15 @@
         background: transparent;
         outline: none;
         font-size: 10pt; }
+        .ui-input > div div.control select::-webkit-input-placeholder,
+        .ui-input > div div.control select:-moz-placeholder .ui-input > div div.control select::-moz-placeholder, .ui-input > div div.control select:-ms-input-placeholder,
         .ui-input > div div.control input::-webkit-input-placeholder,
-        .ui-input >
-div div.control input:-moz-placeholder .ui-input > div div.control input::-moz-placeholder, .ui-input > div div.control input:-ms-input-placeholder {
+        .ui-input > div div.control input:-moz-placeholder .ui-input > div div.control select::-moz-placeholder,
+        .ui-input > div div.control input:-ms-input-placeholder,
+        .ui-input > div div.control select:-moz-placeholder
+        .ui-input > div div.control input::-moz-placeholder,
+        .ui-input > div div.control input:-moz-placeholder
+        .ui-input > div div.control input::-moz-placeholder {
           color: #ccc !important;
           padding: 0px; }
     .ui-input > div .addon {
