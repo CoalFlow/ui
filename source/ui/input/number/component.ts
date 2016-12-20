@@ -1,4 +1,4 @@
-import * as lodash from 'lodash';
+import * as lodashisNaN from 'lodash/isNaN';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
 require('./style.scss');
@@ -24,7 +24,7 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
     parse(value: string): number {
 
         let parsedValue: number = parseFloat(value);
-        if (lodash.isNaN(parsedValue)) {
+        if (lodashisNaN(parsedValue)) {
             parsedValue = null;
         }
         return parsedValue;

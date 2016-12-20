@@ -1,4 +1,3 @@
-import * as lodash from 'lodash';
 import * as moment from "moment";
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 

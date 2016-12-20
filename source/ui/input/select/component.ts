@@ -1,6 +1,8 @@
 declare var angular: ng.IAngularStatic;
+import * as lodashMap from 'lodash/map';
+import * as lodashIsFunction from 'lodash/isFunction';
+import * as lodashIsString from 'lodash/isString';
 
-import * as lodash from 'lodash';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
 require('./style.scss');
@@ -38,9 +40,9 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
             let valueFunction: (item: any) => any;
 
-            if (lodash.isFunction(this.options.valueFunc)) {
+            if (lodashIsFunction(this.options.valueFunc)) {
                 valueFunction = this.options.valueFunc;
-            } else if (lodash.isString(this.options.valueProp)) {
+            } else if (lodashIsString(this.options.valueProp)) {
                 valueFunction = (item: any) => {
                     return item[<string>this.options.valueProp];
                 }
@@ -50,9 +52,9 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
             let labelFunction: (item: any) => string;
 
-            if (lodash.isFunction(this.options.labelFunc)) {
+            if (lodashIsFunction(this.options.labelFunc)) {
                 labelFunction = this.options.labelFunc;
-            } else if (lodash.isString(this.options.labelProp)) {
+            } else if (lodashIsString(this.options.labelProp)) {
                 labelFunction = (item: any) => {
                     return item[<string>this.options.labelProp];
                 }
@@ -60,14 +62,14 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
                 labelFunction = (item: any) => <string>item;
             }
 
-            this._itemOptions = lodash(this.options.items).map((item) => {
+            this._itemOptions = lodashMap(this.options.items, (item) => {
 
                 return {
                     value: valueFunction(item),
                     label: labelFunction(item)
                 };
 
-            }).value();
+            });
         }
 
         return this._itemOptions;

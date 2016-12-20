@@ -1,4 +1,5 @@
-import * as lodash from 'lodash';
+import * as lodashMerge from 'lodash/merge';
+
 //declare var $: JQueryStatic;
 
 require("./style.scss");
@@ -21,7 +22,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
     protected get options(): TOptions {
 
         if (!this._options) {
-            this._options = lodash.merge({}, this.defaultOptions, this.userOptions);
+            this._options = lodashMerge({}, this.defaultOptions, this.userOptions);
         }
         return this._options;
     }
