@@ -17,8 +17,6 @@ export class UiInputTextController extends UiInputCommonController<String, IUiIn
         return value;
     }
 
-
-
 }
 
 export class UiInputTextComponent extends UiInputCommonComponent {

@@ -12,6 +12,7 @@ import { UiInputTextComponent } from './input/text/component';
 import { UiInputNumberComponent } from './input/number/component';
 import { UiInputNumberSpinnerComponent } from './input/number-spinner/component';
 import { UiInputPercentageComponent } from './input/percentage/component';
+import { UiInputSelectComponent } from './input/select/component';
 
 let app = angular.module('ui', [
 
@@ -22,9 +23,9 @@ app
     .component("uiInputNumber", new UiInputNumberComponent())
     .component("uiInputNumberSpinner", new UiInputNumberSpinnerComponent())
     .component("uiInputPercentage", new UiInputPercentageComponent())
+    .component("uiInputSelect", new UiInputSelectComponent())
     .component("uiInputDatetime", new UiInputDateTimeComponent())
-    ;
-
+;
 
 // text(app);
 // number(app);

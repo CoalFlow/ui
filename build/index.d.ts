@@ -12,6 +12,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
     static $inject: string[];
     ngModel: ng.INgModelController;
     protected defaultOptions: TOptions;
+    protected _options: TOptions;
     protected readonly options: TOptions;
     userOptions: TOptions;
     value: TValue;
@@ -92,6 +93,31 @@ export class UiInputPercentageController extends UiInputNumberController {
 export class UiInputPercentageComponent extends UiInputCommonComponent implements ng.IComponentOptions {
     controller: typeof UiInputPercentageController;
     template: any;
+}
+
+export interface IUiInputSelectOptions extends IUiInputCommonOptions {
+    items: any[];
+    valueFunc?: (item: any) => any;
+    valueProp?: string;
+    labelFunc?: (item: any) => string;
+    labelProp?: string;
+}
+export class UiInputSelectController extends UiInputCommonController<Number, IUiInputSelectOptions> {
+    ctrl: any;
+    items: any[];
+    _itemOptions: any[];
+    readonly itemOptions: any[];
+    constructor($element: ng.IAugmentedJQuery);
+    _value: any;
+    value: any;
+    parse(value: any): any;
+    format(value: any): any;
+    $onInit(): void;
+}
+export class UiInputSelectComponent extends UiInputCommonComponent {
+    controller: typeof UiInputSelectController;
+    template: any;
+    constructor();
 }
 
 export interface IUiInputTextOptions extends IUiInputCommonOptions {

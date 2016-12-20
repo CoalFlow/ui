@@ -1,4 +1,5 @@
-import * as lodash from 'lodash';
+import * as lodashMerge from 'lodash/merge';
+
 //declare var $: JQueryStatic;
 
 require("./style.scss");
@@ -17,11 +18,11 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 
     protected defaultOptions: TOptions;
 
-    private _options: TOptions;
+    protected _options: TOptions;
     protected get options(): TOptions {
 
         if (!this._options) {
-            this._options = lodash.merge({}, this.defaultOptions, this.userOptions);
+            this._options = lodashMerge({}, this.defaultOptions, this.userOptions);
         }
         return this._options;
     }
@@ -77,7 +78,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 export abstract class UiInputCommonComponent implements ng.IComponentOptions {
 
     bindings: { [slot: string]: string } = {
-        userOptions: '=options'
+        userOptions: '<options'
     };
 
     require: { [controller: string]: string } = {
