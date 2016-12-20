@@ -2,9 +2,91 @@
     <div class="col">
         ui-input-select
     </div>
-    <div class="col" style="text-align: right"> {{$ctrl.selectedValue}}
+    <div class="col" style="text-align: right"> {{ $ctrl.selectedValue }}
     </div>
 </div>
+
+<h2>Simple values</h2>
+<div class=" row ">
+    <div class="col ">
+        numbers [1,2,3,4,5]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[1,2,3,4,5]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        boolean [true, false]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[true, false]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        numbers, [3,4,5,6,7]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[3,4,5,6,7]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        alpha ['a', 'b', 'c', '1', '2', '3']
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="['a', 'b', 'c', '1', '2', '3']" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        mixed ['a', 'b', 'c', 1, 2, 3, true, false]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="['a', 'b', 'c', 1, 2, 3, true, false]" />
+    </div>
+</div>
+<h2>value / label pairs</h2>
+<div class=" row ">
+    <div class="col ">
+        numbers with labels
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        alpha with label
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: 'a', label: 'The Letter A' }, { value: 'b', label: 'The Letter B' }, { value: 'c', label: 'The Letter C' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        boolean with label
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: true, label: 'A True Thing' }, { value: false, label: 'A False Thing' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+
+
+<!--
 <div class=" row ">
     <div class="col ">
         basic (numbers)
@@ -61,3 +143,19 @@
         <ui-input-select ctrl="$ctrl.asyncSelect" ng-model="$ctrl.selectedValue" options="$ctrl.asyncOptions"></ui-input-select>
     </div>
 </div>
+<div class=" row ">
+    <div class="col ">
+        object value (1)
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" options="{ placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', keyProp: 'value' } "></ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        object value (2)
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" options="{ placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', keyProp: 'value'  } "></ui-input-select>
+    </div>
+</div>-->

@@ -9,7 +9,8 @@ class Controller implements ng.IController {
     numberItems: number[] = [1, 2, 3, 4, 5];
     stringItems: string[] = ['one', 'two', 'three', 'four', 'five'];
     objectItems: any[] = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }]
-
+    objectItems2 : any[] = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }];
+    
     asyncOptions: any = {
         items: [],
         valueFunc: (item) => item.value,
@@ -27,7 +28,7 @@ class Controller implements ng.IController {
 
         this.$timeout(() => {
 
-            this.asyncSelect.items = this.objectItems;
+            this.asyncSelect.items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }];
 
         }, 5000)
 
