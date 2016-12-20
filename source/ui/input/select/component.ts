@@ -29,6 +29,11 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
     $onInit() {
         super.$onInit();
 
+        //  Expose the controller 
+        if (this.ctrl != undefined) {
+            this.ctrl = this;
+        }
+
         //  bind the ngModel's $render function to this value
         this.ngModel.$render = () => {
             this._value = this.ngModel.$viewValue;
