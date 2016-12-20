@@ -112,12 +112,34 @@
 <h2>asynchronous items</h2>
 <div class=" row ">
     <div class="col ">
+        simple values
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncValueSelect" />         
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        value / label pairs
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncPairSelect"
+            ui-item-value="value"
+            ui-item-label="label" />            
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
         objects with id key
     </div>
     <div class="col ">
         <ui-input-select
             ng-model="$ctrl.selectedValue"
-            ctrl="$ctrl.asyncSelect"
+            ctrl="$ctrl.asyncObjectSelect"
             ui-item-label="label"
             ui-item-key="id" />            
     </div>

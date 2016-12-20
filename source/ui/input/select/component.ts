@@ -102,9 +102,11 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     format(value: any): any {
 
-        if (value !== undefined && this.itemValue) {
-            return lodashFind(this.items, (item) => item[this.itemValue] === value);
-        } else {
+         if (value !== undefined && this.itemValue) {
+             let newValue = {};
+             newValue[this.itemValue] = value;
+             return newValue;
+         } else {
             return value;
         }
 

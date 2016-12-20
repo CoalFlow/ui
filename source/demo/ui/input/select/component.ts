@@ -23,13 +23,17 @@ class Controller implements ng.IController {
 
     }
 
-    asyncSelect: UiInputSelectController;
+    asyncObjectSelect: UiInputSelectController;
+    asyncPairSelect: UiInputSelectController;
+    asyncValueSelect: UiInputSelectController;
 
     $onInit() {
 
         this.$timeout(() => {
 
-            this.asyncSelect.items = [{ id: 1, label: 'one' }, { id: 2, label: 'two' }, { id: 3, label: 'three' }, { id: 4, label: 'four' }];
+            this.asyncObjectSelect.items = [{ id: 1, label: 'one' }, { id: 2, label: 'two' }, { id: 3, label: 'three' }, { id: 4, label: 'four' }];
+            this.asyncPairSelect.items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }];
+            this.asyncValueSelect.items = ['a', 'b', 'c', 1, 2, 3, true, false];
 
         }, 5000)
 
