@@ -1,4 +1,5 @@
 import * as lodashMerge from 'lodash/merge';
+import * as ng from 'angular';
 
 //declare var $: JQueryStatic;
 
@@ -12,7 +13,7 @@ export interface IUiInputCommonOptions {
 
 export abstract class UiInputCommonController<TValue, TOptions extends IUiInputCommonOptions> implements ng.IController {
 
-    static $inject = ['$element'];
+    static $inject = ['$element', '$attrs'];
 
     ngModel: ng.INgModelController;
 
@@ -32,7 +33,7 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 
     value: TValue;
 
-    constructor(protected $element: JQuery) {
+    constructor(protected $element: JQuery, protected $attrs: ng.IAttributes) {
         this.defaultOptions = <TOptions>{};
     }
 

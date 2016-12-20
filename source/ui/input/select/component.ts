@@ -30,7 +30,8 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
         super.$onInit();
 
         //  Expose the controller 
-        if (this.ctrl != undefined) {
+
+        if ('ctrl' in this.$attrs) {
             this.ctrl = this;
         }
 
@@ -78,6 +79,17 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     }
 
+    getItemKey(item: any) {
+
+        if (item && this.itemKey) {
+            return item[this.itemKey];
+        } else if (item && this.itemValue) {
+            return item[this.itemValue];
+        } else {
+            return item;
+        }
+    }
+
     parse(value: any): any {
 
         if (this.itemValue) {
@@ -90,10 +102,8 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     format(value: any): any {
 
-        if (value && this.itemValue) {
+        if (value !== undefined && this.itemValue) {
             return lodashFind(this.items, (item) => item[this.itemValue] === value);
-        } else if (value && this.itemKey) {
-            return lodashFind(this.items, (item) => item[this.itemKey] === value[this.itemKey]);
         } else {
             return value;
         }

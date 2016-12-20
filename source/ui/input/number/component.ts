@@ -1,5 +1,6 @@
 import * as lodashisNaN from 'lodash/isNaN';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+import * as ng from 'angular';
 
 require('./style.scss');
 
@@ -13,8 +14,8 @@ export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
 
-    constructor($element: ng.IAugmentedJQuery) {
-        super($element);
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
+        super($element, $attrs);
 
         this.defaultOptions.increment = 1;
         this.defaultOptions.precision = 0;

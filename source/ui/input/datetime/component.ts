@@ -1,5 +1,6 @@
 import * as moment from "moment";
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
+import * as ng from 'angular';
 
 require('./style.scss');
 
@@ -25,9 +26,9 @@ export interface IUiInputDateTimeOptions extends IUiInputCommonOptions
 export class UiInputDateTimeController extends UiInputCommonController<Date, IUiInputDateTimeOptions>
 {
 
-    constructor($element: ng.IAugmentedJQuery)
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes)
     {
-        super($element);
+        super($element, $attrs);
 
         this.defaultOptions.format = DEFAULT_FORMAT;
         this.defaultOptions.increment = DEFAULT_INCREMENT;
