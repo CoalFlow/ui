@@ -22,13 +22,13 @@ class Controller implements ng.IController {
 
     }
 
-    asyncSelect: any = null;
+ //   asyncSelect: any = null;
 
     $onInit() {
 
         this.$timeout(() => {
 
-            this.asyncSelect.items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }];
+      //      this.asyncSelect.items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }];
 
         }, 5000)
 
