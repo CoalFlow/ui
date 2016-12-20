@@ -2,6 +2,7 @@ declare var angular: ng.IAngularStatic;
 import * as lodashMap from 'lodash/map';
 import * as lodashIsFunction from 'lodash/isFunction';
 import * as lodashIsString from 'lodash/isString';
+import * as lodashFind from 'lodash/find';
 
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
@@ -35,10 +36,9 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     }
 
-
     //  value
     _value: any;
-    
+
     get value(): any {
         return this._value;
     }
@@ -63,13 +63,38 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
     get itemOptions(): any[] {
         return this._items;
     }
-        
+
+    itemValue: string = undefined;
+    itemLabel: string = undefined;
+
+    getItemLabel(item: any) {
+
+        if (this.itemLabel) {
+            return item[this.itemLabel];
+        } else {
+            return item;
+        }
+
+    }
+
     parse(value: any): any {
-        return value;
+
+        if (this.itemValue) {
+            return value[this.itemValue];
+        } else {
+            return value;
+        }
+
     }
 
     format(value: any): any {
-        return value;
+
+        if (value && this.itemValue) {
+            return lodashFind(this.items, (item) => item[this.itemValue] === value);
+        } else {
+            return value;
+        }
+
     }
 
 
@@ -224,6 +249,8 @@ export class UiInputSelectComponent extends UiInputCommonComponent {
         this.bindings["ctrl"] = "=?";
         this.bindings["placeholder"] = "=?uiPlaceholder";
         this.bindings["items"] = "<?uiItems";
+        this.bindings["itemValue"] = "@?uiItemValue";
+        this.bindings["itemLabel"] = "@?uiItemLabel";
 
     }
 

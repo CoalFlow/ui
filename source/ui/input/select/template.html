@@ -1,6 +1,6 @@
 <div>
     <div class="control">
-        <select placeholder="{{ $ctrl.placholder }}" ng-model="$ctrl.value" ng-options="item for item in $ctrl.itemOptions">
+        <select placeholder="{{ $ctrl.placeholder }}" ng-model="$ctrl.value" ng-options="$ctrl.getItemLabel(item) for item in $ctrl.items">
         </select>
     </div>
 </div>
