@@ -83,6 +83,7 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
 export class UiInputNumberComponent extends UiInputCommonComponent {
     controller: typeof UiInputNumberController;
     template: any;
+    constructor();
 }
 
 export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
@@ -120,11 +121,16 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
     getItemKey(item: any): any;
     parse(value: any): any;
     format(value: any): any;
+    $postLink(): void;
 }
 export class UiInputSelectComponent extends UiInputCommonComponent {
     controller: typeof UiInputSelectController;
     template: any;
     constructor();
+    transclude: {
+        prefix: string;
+        postfix: string;
+    };
 }
 
 export interface IUiInputTextOptions extends IUiInputCommonOptions {

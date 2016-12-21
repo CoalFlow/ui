@@ -112,6 +112,11 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     }
 
+    $postLink() {
+        this.$element.find("prefix").children().unwrap();
+        this.$element.find("postfix").children().unwrap();
+        this.$element.find(".addons").children().unwrap();
+    }
 }
 
 export class UiInputSelectComponent extends UiInputCommonComponent {
@@ -130,5 +135,10 @@ export class UiInputSelectComponent extends UiInputCommonComponent {
         this.bindings["itemKey"] = "@?uiItemKey";
 
     }
+
+    transclude = {
+        prefix: "?prefix",
+        postfix: "?postfix"
+    };
 
 }

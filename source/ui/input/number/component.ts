@@ -6,7 +6,7 @@ require('./style.scss');
 
 export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 
-    precision: number; //   The number of decimal places to display
+    precision: number;  //  The number of decimal places to display
     increment: number;  //  The number by which to change the value when the user increments / decrements the controller
     min: number;
     max: number;
@@ -40,14 +40,22 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
         }
     }
 
-
-
 }
 
 export class UiInputNumberComponent extends UiInputCommonComponent {
 
     controller = UiInputNumberController;
     template = require('./template.html');
+
+    constructor() {
+        super();
+
+        this.bindings["min"] = "@?uiMin";
+        this.bindings["max"] = "@?uiMax";
+        this.bindings["increment"] = "@?uiIncrement";
+        this.bindings["precision"] = "@?uiPrecision";
+
+    }
 
 }
 

@@ -30,3 +30,20 @@
         <ui-input-number ng-model="$ctrl.numberValue" options=" { placeholder: 'enter number...' } " ui-validate="'$value > 0'"></ui-input-number>
     </div>
 </div>
+<div class="row ">
+    <div class="col ">
+        increment (10)
+    </div>
+    <div class="col ">
+        <ui-input-number ng-model="$ctrl.numberValue" ui-increment="10"></ui-input-number>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        min (10)
+    </div>
+    <div class="col ">
+        <ui-input-number ng-model="$ctrl.numberValue" ui-min="-10"></ui-input-number>
+    </div>
+</div>
+

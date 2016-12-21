@@ -144,7 +144,63 @@
             ui-item-key="id" />            
     </div>
 </div>
-
+<h2>addons</h2>
+<div class=" row ">
+    <div class="col ">
+        post
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+      
+            <postfix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </postfix>
+        </ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        pre
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+            <prefix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </prefix>        
+        </ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        pre &amp; post
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+            <prefix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </prefix>        
+            <postfix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </postfix>
+        </ui-input-select>
+    </div>
+</div>
 <!--
 <div class=" row ">
     <div class="col ">

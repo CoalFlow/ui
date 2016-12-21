@@ -27,6 +27,11 @@ class Controller implements ng.IController {
     asyncPairSelect: UiInputSelectController;
     asyncValueSelect: UiInputSelectController;
 
+    addonClick(event: JQueryEventObject) {
+        alert("addon was clicked, details in the conosole");
+        console.log(event);
+    }
+
     $onInit() {
 
         this.$timeout(() => {

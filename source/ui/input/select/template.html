@@ -1,6 +1,10 @@
 <div>
+    <div class="addons" ng-transclude="prefix">
+    </div>    
     <div class="control">
         <select placeholder="{{ $ctrl.placeholder }}" ng-model="$ctrl.value" ng-options="$ctrl.getItemLabel(item) for item in $ctrl.items track by $ctrl.getItemKey(item)">
         </select>
+    </div>
+    <div class="addons" ng-transclude="postfix">
     </div>
 </div>
