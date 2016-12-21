@@ -3,7 +3,6 @@ import {UiInputCommonController, IUiInputCommonOptions} from "../common/componen
 import {UiInputCommonComponent} from "../common/component";
 
 require("./style.scss");
-require("./ui-checkbox-embedded.css");
 
 const DEFAULT_CHECKED: string = "icon-check";
 const DEFAULT_UNCHECKED: string = "icon-check-empty";

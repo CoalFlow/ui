@@ -3,6 +3,7 @@ import * as lodashMerge from 'lodash/merge';
 //declare var $: JQueryStatic;
 
 require("./style.scss");
+require("./ui-common-embedded.css");
 
 export interface IUiInputCommonOptions {
 
