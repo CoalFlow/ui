@@ -17,36 +17,46 @@ export interface IUiInputCheckboxOptions extends IUiInputCommonOptions
 export class UiCheckboxController extends UiInputCommonController<Boolean, IUiInputCheckboxOptions>
 {
 
-    constructor(protected $element: ng.IAugmentedJQuery) {
+    constructor(protected $element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
         //  Super constructor
-        super($element);
+        super($element, $attrs);
 
     }
 
     parse(value: string): boolean
     {
-
-        let parsedValue: boolean = !!value;
-        return parsedValue;
-
+        return (value ? true : false);
     }
 
     format(value: boolean): string
     {
-        return value.toString();
+        return (value ? value.toString() : false.toString());
     }
 
     change()
     {
-        this.ngModel.$setViewValue(!this.ngModel.$modelValue);
+        this.value = !this.value;
+        this.ngModel.$setViewValue(this.value);
     }
 
+    $onInit() {
+    //    super.$onInit();
+
+        this.ngModel.$parsers.push((value) => this.parse(value));
+        this.ngModel.$formatters.push((value) => this.format(value));
+
+        this.ngModel.$render = () => {
+            this.value = this.ngModel.$modelValue;
+        };
+
+    }
     // Set the icon class for the checkbox - can be configured through the
     // options
 
     getIcon(): string
     {
-        if(this.ngModel.$modelValue)
+
+        if(this.value)
         {
             if (this.options.iconChecked)
             {

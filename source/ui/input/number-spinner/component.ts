@@ -60,6 +60,20 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
         this.ngModel.$setViewValue(this.$input.val());
 
     }
+
+    $onInit() {
+        super.$onInit();
+        
+        var $input = $(this.$element.find('input'));
+
+        $input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue($input.val());
+        })
+
+        this.ngModel.$render = () => {
+            $input.val(this.ngModel.$viewValue);
+        };        
+    }
 }
 
 export class UiInputNumberSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {

@@ -40,6 +40,20 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
         }
     }
 
+    $onInit() {
+        super.$onInit();
+        
+        var $input = $(this.$element.find('input'));
+
+        $input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue($input.val());
+        })
+
+        this.ngModel.$render = () => {
+            $input.val(this.ngModel.$viewValue);
+        };        
+    }
+
 }
 
 export class UiInputNumberComponent extends UiInputCommonComponent {

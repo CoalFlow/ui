@@ -1,5 +1,7 @@
 ﻿﻿ui-input-checkbox {
 
+    user-select: none;
+    
     &.ng-invalid {
         color: red;
     }

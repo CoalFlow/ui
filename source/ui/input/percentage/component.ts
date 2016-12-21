@@ -26,6 +26,7 @@ export class UiInputPercentageController extends UiInputNumberController {
         }
     }
 
+
 }
 
 export class UiInputPercentageComponent extends UiInputCommonComponent implements ng.IComponentOptions {
