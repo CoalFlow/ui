@@ -26,15 +26,8 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     placeholder: string;
 
-    constructor($element, $attrs) {
-        super($element, $attrs);
-        console.log('select constructor');
-
-    }
-
     $onInit() {
         super.$onInit();
-        console.log("select init");
 
         //  Expose the controller 
 
@@ -62,17 +55,13 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
     }
 
     //  items
-    _items: any[] = undefined;
+    _items: any[];
 
     set items(value: any[]) {
-        console.log('setting items');
-        console.log(value);
         this._items = value;
     }
 
     get items() {
-        console.log('getting items');
-        console.log(this._items);        
         return this._items;
     }
 
