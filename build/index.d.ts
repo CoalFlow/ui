@@ -126,6 +126,7 @@ export interface IUiInputSelectOptions extends IUiInputCommonOptions {
 export class UiInputSelectController extends UiInputCommonController<Number, IUiInputSelectOptions> {
     ctrl: any;
     placeholder: string;
+    constructor($element: any, $attrs: any);
     $onInit(): void;
     _value: any;
     value: any;

@@ -26,8 +26,15 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
 
     placeholder: string;
 
+    constructor($element, $attrs) {
+        super($element, $attrs);
+        console.log('select constructor');
+
+    }
+    
     $onInit() {
         super.$onInit();
+        console.log("select init");
 
         //  Expose the controller 
 
