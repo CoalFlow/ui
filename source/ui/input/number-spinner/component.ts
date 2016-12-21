@@ -3,7 +3,6 @@ import { IUiInputNumberOptions, UiInputNumberController } from '../number/compon
 import * as ng from 'angular';
 
 require('./style.scss');
-require('./ui-embedded.css');
 
 export interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
 
@@ -59,6 +58,20 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
         //  Set the view value on ngModel (this may be rejected if it is invalid, end result will be null)
         this.ngModel.$setViewValue(this.$input.val());
 
+    }
+
+    $onInit() {
+        super.$onInit();
+        
+        var $input = $(this.$element.find('input'));
+
+        $input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue($input.val());
+        })
+
+        this.ngModel.$render = () => {
+            $input.val(this.ngModel.$viewValue);
+        };        
     }
 }
 

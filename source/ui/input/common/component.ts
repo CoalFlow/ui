@@ -4,6 +4,7 @@ import * as ng from 'angular';
 //declare var $: JQueryStatic;
 
 require("./style.scss");
+require("./ui-common-embedded.css");
 
 export interface IUiInputCommonOptions {
 
@@ -49,16 +50,6 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
         //  Add and remove the focussed class when this control has the focus
         this.$element.on('focus', '*', () => this.focus(false));
         this.$element.on('blur', '*', () => this.unfocus(false));
-
-        var $input = $(this.$element.find('input'));
-
-        $input.on("change keyup", (event: JQueryEventObject) => {
-            this.ngModel.$setViewValue($input.val());
-        })
-
-        this.ngModel.$render = () => {
-            $input.val(this.ngModel.$viewValue);
-        };
 
     }
 

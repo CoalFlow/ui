@@ -69,6 +69,20 @@ export class UiInputDateTimeController extends UiInputCommonController<Date, IUi
         }
         return bReturn;
     }
+    
+    $onInit() {
+        super.$onInit();
+        
+        var $input = $(this.$element.find('input'));
+
+        $input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue($input.val());
+        })
+
+        this.ngModel.$render = () => {
+            $input.val(this.ngModel.$viewValue);
+        };        
+    }
 }
 
 export class UiInputDateTimeComponent extends UiInputCommonComponent

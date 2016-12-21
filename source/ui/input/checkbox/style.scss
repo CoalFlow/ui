@@ -1,0 +1,17 @@
+﻿﻿ui-input-checkbox {
+
+    user-select: none;
+    
+    &.ng-invalid {
+        color: red;
+    }
+
+    i:focus {
+        outline: 0;
+        color: green;
+    }
+
+    i:hover {
+        cursor: hand;
+    }
+}

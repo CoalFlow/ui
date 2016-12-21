@@ -4,6 +4,7 @@ import numberSpinner from './input/number-spinner/component';
 import percentage from './input/percentage/component';
 import select from './input/select/component';
 import datetime from "./input/datetime/component";
+import checkbox from "./input/checkbox/component";
 
 export default (module: ng.IModule) => {
     text(module);
@@ -12,4 +13,5 @@ export default (module: ng.IModule) => {
     percentage(module);
     select(module);
     datetime(module);
+    checkbox(module);
 };
