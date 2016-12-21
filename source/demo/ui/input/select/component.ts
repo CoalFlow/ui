@@ -1,3 +1,4 @@
+import { UiInputSelectController } from '../../../../ui/input/select/component';
 declare var ng: ng.IAngularStatic;
 
 require('./style.scss');
@@ -9,7 +10,8 @@ class Controller implements ng.IController {
     numberItems: number[] = [1, 2, 3, 4, 5];
     stringItems: string[] = ['one', 'two', 'three', 'four', 'five'];
     objectItems: any[] = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }]
-
+    objectItems2 : any[] = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }, { value: 4, label: 'four' }];
+    
     asyncOptions: any = {
         items: [],
         valueFunc: (item) => item.value,
@@ -21,13 +23,22 @@ class Controller implements ng.IController {
 
     }
 
-    asyncSelect: any = null;
+    asyncObjectSelect: UiInputSelectController;
+    asyncPairSelect: UiInputSelectController;
+    asyncValueSelect: UiInputSelectController;
+
+    addonClick(event: JQueryEventObject) {
+        alert("addon was clicked, details in the conosole");
+        console.log(event);
+    }
 
     $onInit() {
 
         this.$timeout(() => {
 
-            this.asyncSelect.items = this.objectItems;
+            this.asyncObjectSelect.items = [{ id: 1, label: 'one' }, { id: 2, label: 'two' }, { id: 3, label: 'three' }, { id: 4, label: 'four' }];
+            this.asyncPairSelect.items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }];
+            this.asyncValueSelect.items = ['a', 'b', 'c', 1, 2, 3, true, false];
 
         }, 5000)
 

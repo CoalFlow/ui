@@ -2,9 +2,206 @@
     <div class="col">
         ui-input-select
     </div>
-    <div class="col" style="text-align: right"> {{$ctrl.selectedValue}}
+    <div class="col" style="text-align: right"> {{ $ctrl.selectedValue }}
     </div>
 </div>
+
+<h2>simple values values</h2>
+<div class=" row ">
+    <div class="col ">
+        numbers [1,2,3,4,5]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[1,2,3,4,5]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        boolean [true, false]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[true, false]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        numbers, [3,4,5,6,7]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="[3,4,5,6,7]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        alpha ['a', 'b', 'c', '1', '2', '3']
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="['a', 'b', 'c', '1', '2', '3']" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        mixed ['a', 'b', 'c', 1, 2, 3, true, false]
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" ui-placeholder="'Select a number...'" ui-items="['a', 'b', 'c', 1, 2, 3, true, false]" />
+    </div>
+</div>
+<h2>value / label pairs</h2>
+<div class=" row ">
+    <div class="col ">
+        numbers with labels
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: 1, label: 'one' }, { value: 2, label: 'two' }, { value: 3, label: 'three' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        alpha with label
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: 'a', label: 'The Letter A' }, { value: 'b', label: 'The Letter B' }, { value: 'c', label: 'The Letter C' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        boolean with label
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ value: true, label: 'A True Thing' }, { value: false, label: 'A False Thing' }]" 
+            ui-item-value="value"
+            ui-item-label="label" />
+    </div>
+</div>
+<h2>object values / simple keys</h2>
+<div class=" row ">
+    <div class="col ">
+        objects with id key
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ id: 1, name: 'The First Object' }, { id: 2, name: 'The Second Object' }, { id: 3, name: 'The Third Object' }]"
+            ui-item-label="name"
+            ui-item-key="id" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        objects with id key
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ui-items="[{ id: 3, name: 'The Third Object' }, { id: 4, name: 'The Fourth Object' }, { id: 5, name: 'The Fifth Object' }]" 
+            ui-item-label="name"
+            ui-item-key="id" />            
+    </div>
+</div>
+<h2>asynchronous items</h2>
+<div class=" row ">
+    <div class="col ">
+        simple values
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncValueSelect" />         
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        value / label pairs
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncPairSelect"
+            ui-item-value="value"
+            ui-item-label="label" />            
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        objects with id key
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+            ui-item-key="id" />            
+    </div>
+</div>
+<h2>addons</h2>
+<div class=" row ">
+    <div class="col ">
+        post
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+      
+            <postfix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </postfix>
+        </ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        pre
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+            <prefix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </prefix>        
+        </ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        pre &amp; post
+    </div>
+    <div class="col ">
+        <ui-input-select
+            ng-model="$ctrl.selectedValue"
+            ctrl="$ctrl.asyncObjectSelect"
+            ui-item-label="label"
+        ui-item-key="id">
+            <prefix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </prefix>        
+            <postfix>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
+                <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
+            </postfix>
+        </ui-input-select>
+    </div>
+</div>
+<!--
 <div class=" row ">
     <div class="col ">
         basic (numbers)
@@ -61,3 +258,19 @@
         <ui-input-select ctrl="$ctrl.asyncSelect" ng-model="$ctrl.selectedValue" options="$ctrl.asyncOptions"></ui-input-select>
     </div>
 </div>
+<div class=" row ">
+    <div class="col ">
+        object value (1)
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" options="{ placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', keyProp: 'value' } "></ui-input-select>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        object value (2)
+    </div>
+    <div class="col ">
+        <ui-input-select ng-model="$ctrl.selectedValue" options="{ placeholder: 'enter percentage...', items: [{ value: 1, label: 'one'}, { value: 2, label: 'two'}, {value: 3, label: 'three'}], labelProp: 'label', keyProp: 'value'  } "></ui-input-select>
+    </div>
+</div>-->
