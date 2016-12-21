@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        ui-input-checkbox
+    </div>
+    <div class="col" style="text-align: right">
+        {{$ctrl.checkValue}}
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        basic
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.checkValue" ></ui-input-checkbox>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        alternative check
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.checkValue" options=" { iconChecked: 'icon-blank', iconUnchecked: 'icon-check-empty' } "></ui-input-checkbox>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        other alternative check
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.checkValue" options=" { iconChecked: 'icon-ok-squared', iconUnchecked: 'icon-blank' } "></ui-input-checkbox>
+    </div>
+</div>
