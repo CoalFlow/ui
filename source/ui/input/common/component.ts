@@ -4,6 +4,7 @@ import * as ng from 'angular';
 //declare var $: JQueryStatic;
 
 require("./style.scss");
+require("./ui-common-embedded.css");
 
 export interface IUiInputCommonOptions {
 

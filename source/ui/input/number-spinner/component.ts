@@ -3,7 +3,6 @@ import { IUiInputNumberOptions, UiInputNumberController } from '../number/compon
 import * as ng from 'angular';
 
 require('./style.scss');
-require('./ui-embedded.css');
 
 export interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
 
