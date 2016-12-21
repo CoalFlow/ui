@@ -1,13 +1,6 @@
-import {UiInputDateTimeComponent} from "./input/datetime/component";
 declare var angular: ng.IAngularStatic;
 
-//import * as angular from 'angular';
-//import * as $ from 'jquery';
-
-// import text from './input/text/component';
-// import number from './input/number/component';
-// import numberSpinner from './input/number-spinner/component';
-// import percentage from './input/percentage/component';
+import { UiInputDateTimeComponent } from "./input/datetime/component";
 import { UiInputTextComponent } from './input/text/component';
 import { UiInputNumberComponent } from './input/number/component';
 import { UiInputNumberSpinnerComponent } from './input/number-spinner/component';
@@ -19,15 +12,15 @@ let app = angular.module('ui', [
 
 ]);
 
-app
-    .component("uiInputText", new UiInputTextComponent())
+ app
+     .component("uiInputText", new UiInputTextComponent())
     .component("uiInputNumber", new UiInputNumberComponent())
     .component("uiInputNumberSpinner", new UiInputNumberSpinnerComponent())
-    .component("uiInputPercentage", new UiInputPercentageComponent())
-    .component("uiInputSelect", new UiInputSelectComponent())
-    .component("uiInputDatetime", new UiInputDateTimeComponent())
-    .component("uiInputCheckbox", new UiInputCheckboxComponent())
-;
+     .component("uiInputPercentage", new UiInputPercentageComponent())
+     .component("uiInputSelect", new UiInputSelectComponent())
+     .component("uiInputDatetime", new UiInputDateTimeComponent())
+     .component("uiInputCheckbox", new UiInputCheckboxComponent())
+ ;
 
 // text(app);
 // number(app);

@@ -1,6 +1,5 @@
 import * as lodashisNaN from 'lodash/isNaN';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
-import * as ng from 'angular';
 
 require('./style.scss');
 

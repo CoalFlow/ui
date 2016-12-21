@@ -1,4 +1,4 @@
-import * as ng from 'angular';
+
 import './../ui/module'
 import demo from './module';
 
