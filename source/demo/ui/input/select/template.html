@@ -97,6 +97,21 @@
             ui-item-key="id" />
     </div>
 </div>
+<h2>Enable / disable select</h2>
+<div class=" row ">
+    <div class="col ">
+        objects with id key
+        <ui-input-checkbox ng-model="$ctrl.enabled"></ui-input-checkbox>
+    </div>
+    <div class="col ">
+        <ui-input-select
+                ng-model="$ctrl.selectedValue"
+                ui-items="[{ id: 1, name: 'The First Object' }, { id: 2, name: 'The Second Object' }, { id: 3, name: 'The Third Object' }]"
+                ui-item-label="name"
+                ui-item-key="id"
+                ui-disabled="{{!$ctrl.enabled}}"/>
+    </div>
+</div>
 <div class=" row ">
     <div class="col ">
         objects with id key
