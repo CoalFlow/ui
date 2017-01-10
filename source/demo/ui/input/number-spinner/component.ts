@@ -1,4 +1,3 @@
-//import * as ng from 'angular';
 
 require('./style.scss');
 

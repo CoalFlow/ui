@@ -1,5 +1,3 @@
-//import * as ng from 'angular';
-
 require('./style.scss');
 
 class Controller implements ng.IController {

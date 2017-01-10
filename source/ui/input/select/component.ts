@@ -55,7 +55,7 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
     }
 
     //  items
-    _items: any[] = undefined;
+    _items: any[];
 
     set items(value: any[]) {
         this._items = value;

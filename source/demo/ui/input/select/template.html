@@ -166,11 +166,7 @@
     </div>
     <div class="col ">
         <ui-input-select
-            ng-model="$ctrl.selectedValue"
-            ctrl="$ctrl.asyncObjectSelect"
-            ui-item-label="label"
-        ui-item-key="id">
-      
+            ng-model="$ctrl.selectedValue" ui-items="[null, 'a', 'b', 'c', 1, 2, 3, true, false]">
             <postfix>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
@@ -184,10 +180,7 @@
     </div>
     <div class="col ">
         <ui-input-select
-            ng-model="$ctrl.selectedValue"
-            ctrl="$ctrl.asyncObjectSelect"
-            ui-item-label="label"
-        ui-item-key="id">
+            ng-model="$ctrl.selectedValue" ui-items="[null, 'a', 'b', 'c', 1, 2, 3, true, false]">
             <prefix>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
@@ -201,10 +194,7 @@
     </div>
     <div class="col ">
         <ui-input-select
-            ng-model="$ctrl.selectedValue"
-            ctrl="$ctrl.asyncObjectSelect"
-            ui-item-label="label"
-        ui-item-key="id">
+            ng-model="$ctrl.selectedValue" ui-items="[null, 'a', 'b', 'c', 1, 2, 3, true, false]">
             <prefix>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">some</a></div>
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
@@ -214,6 +204,23 @@
                 <div class="addon"><a ng-click="$ctrl.addonClick($event)">more</a></div>
             </postfix>
         </ui-input-select>
+    </div>
+</div>
+<h2>validation</h2>
+<div class=" row ">
+    <div class="col ">
+        required
+    </div>
+    <div class="col ">
+        <ui-input-select ng-required="true" ng-model="$ctrl.selectedValue" ui-items="[null, 'a', 'b', 'c', 1, 2, 3, true, false]" />
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        ui-validate ('a')
+    </div>
+    <div class="col ">
+        <ui-input-select ui-validate="'$value==\'a\''" ng-model="$ctrl.selectedValue" ui-items="[null, 'a', 'b', 'c', 1, 2, 3, true, false]" />
     </div>
 </div>
 <!--

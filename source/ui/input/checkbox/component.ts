@@ -1,5 +1,4 @@
-﻿﻿import "angular";
-import {UiInputCommonController, IUiInputCommonOptions} from "../common/component";
+﻿﻿import {UiInputCommonController, IUiInputCommonOptions} from "../common/component";
 import {UiInputCommonComponent} from "../common/component";
 
 require("./style.scss");

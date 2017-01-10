@@ -1,6 +1,5 @@
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 import { IUiInputNumberOptions, UiInputNumberController } from '../number/component';
-import * as ng from 'angular';
 
 require('./style.scss');
 

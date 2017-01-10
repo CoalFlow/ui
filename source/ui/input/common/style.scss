@@ -65,3 +65,6 @@ $invalidBorderColor:#f00;
         }
     }
 }
+.ng-invalid>.ui-input>div {
+    border: solid 1px $invalidBorderColor;
+}

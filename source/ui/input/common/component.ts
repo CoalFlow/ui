@@ -1,5 +1,4 @@
 import * as lodashMerge from 'lodash/merge';
-import * as ng from 'angular';
 
 //declare var $: JQueryStatic;
 
