@@ -134,6 +134,12 @@ export class UiInputSelectComponent extends UiInputCommonComponent {
         this.bindings["itemLabel"] = "@?uiItemLabel";
         this.bindings["itemKey"] = "@?uiItemKey";
 
+        // This binds the disabled state to a string that will only disable the
+        // component if the string is 'true'. There are alternative mechanisms for this
+        // but this keeps the component binding mechanism consistent.
+
+        this.bindings["selDisabled"] = "@uiDisabled";
+
     }
 
     transclude = {
