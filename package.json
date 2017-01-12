@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:release": "rimraf build && webpack --config ./config/release/webpack.config.js",
     "start": "rimraf build && webpack-dev-server --config ./config/debug/webpack.config.js",
-    "release": "npm run build:release && npm version patch && git push --tags && git push && git push github --tags && git push github"
+    "release": "npm run build:release && npm version patch && git push --tags && git push && git push github --tags && git push github && git push origin master:develop"
   },
   "repository": {
     "type": "git",
