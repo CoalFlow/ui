@@ -82,8 +82,6 @@ export class UiInputDateTimeController extends UiInputCommonController<Date, IUi
         this.ngModel.$render = () => {
             $input.val(this.ngModel.$viewValue);
         };
-
-        console.log(this);
     }
 }
 

@@ -6,16 +6,16 @@
         color: red;
     }
 
-    i:focus {
-        outline: 0;
-        color: green;
-    }
-
-    i:hover {
-        cursor: hand;
-    }
-
-    i[disabled] {
-        opacity: .3;
+    i {
+        &:focus {
+            outline: 0;
+            color: green;
+        }
+        &:hover {
+            cursor: hand;
+        }
+        &[disabled] {
+            opacity: .3;
+        }
     }
 }

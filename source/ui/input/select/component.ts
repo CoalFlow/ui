@@ -39,9 +39,6 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
         this.ngModel.$render = () => {
             this._value = this.ngModel.$viewValue;
         };
-
-        console.log(this);
-
     }
 
     //  value

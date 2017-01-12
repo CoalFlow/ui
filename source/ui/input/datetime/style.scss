@@ -10,6 +10,10 @@ ui-input-datetime {
             &::-webkit-outer-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
+
+            }
+            &[readonly] {
+                color: gray;
             }
         }
     }
