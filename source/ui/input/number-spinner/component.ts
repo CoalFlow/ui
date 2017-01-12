@@ -33,19 +33,23 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
 
     changeValueBy(value: number) {
 
-        //  Get the current value from the DOM
-        let currentValue = this.parse(this.$input.val());
+        if(!this.setDisabled)
+        {
+            //  Get the current value from the DOM
+            let currentValue = this.parse(this.$input.val());
 
-        //  Set it to zero if it is non-numeric
-        if (currentValue == null) {
-            currentValue = 0;
+            //  Set it to zero if it is non-numeric
+            if (currentValue == null)
+            {
+                currentValue = 0;
+            }
+
+            //  Change the value
+            currentValue += value;
+
+            //  Set the view value
+            this.setViewValue(currentValue);
         }
-
-        //  Change the value
-        currentValue += value;
-
-        //  Set the view value
-        this.setViewValue(currentValue);
 
     }
 

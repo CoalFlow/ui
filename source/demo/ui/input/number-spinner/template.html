@@ -55,6 +55,30 @@
     </div>
 </div>
 
+<div class=" row ">
+    <div class="col ">
+        disabled
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.disabled"></ui-input-checkbox>
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " ui-disabled="$ctrl.disabled"></ui-input-number-spinner>
+    </div>
+</div>
+
+<div class=" row ">
+    <div class="col ">
+        readonly
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.readonly"></ui-input-checkbox>
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " ui-readonly="$ctrl.readonly"></ui-input-number-spinner>
+    </div>
+</div>
+
 <table style="width: 100%">
 <tr>
     <td>in a table</td>

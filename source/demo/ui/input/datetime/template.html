@@ -47,3 +47,15 @@
         <ui-input-datetime ng-model="$ctrl.dateValue" options=" { placeholder: 'enter date and time...', min: $ctrl.dateMinValue, max: $ctrl.dateMaxValue } " ></ui-input-datetime>
     </div>
 </div>
+
+<div class="row ">
+    <div class="col ">
+        set the datetime readonly
+    </div>
+    <div class="col">
+        <ui-input-checkbox ng-model="$ctrl.readonly"></ui-input-checkbox>
+    </div>
+    <div class="col ">
+        <ui-input-datetime ng-model="$ctrl.dateValue" ui-readonly="$ctrl.readonly" ></ui-input-datetime>
+    </div>
+</div>

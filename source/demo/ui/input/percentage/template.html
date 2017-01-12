@@ -45,3 +45,15 @@
         <ui-input-percentage ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 2 } "></ui-input-percentage>
     </div>
 </div>
+
+<div class=" row ">
+    <div class="col ">
+        readonly
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.readonly"/>
+    </div>
+    <div class="col ">
+        <ui-input-percentage ng-model="$ctrl.percentageValue" ui-readonly="$ctrl.readonly"></ui-input-percentage>
+    </div>
+</div>

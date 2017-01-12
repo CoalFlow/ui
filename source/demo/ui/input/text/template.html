@@ -24,3 +24,16 @@
         </ui-input-text>
     </div>
 </div>
+
+<div class="row">
+    <div class="col">
+        basic
+    </div>
+    <div class="col 4">
+        <ui-input-checkbox ng-model="$ctrl.readonly"/>
+    </div>
+    <div class="col">
+        <ui-input-text ng-model="$ctrl.textValue" ui-readonly="$ctrl.readonly">
+        </ui-input-text>
+    </div>
+</div>

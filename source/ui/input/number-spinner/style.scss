@@ -15,6 +15,9 @@ ui-input-number-spinner {
 
         i {
             cursor: pointer;
+            &[disabled] {
+                opacity: 0.3;
+            }
         }
     }
 }

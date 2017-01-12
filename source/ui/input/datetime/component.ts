@@ -77,11 +77,11 @@ export class UiInputDateTimeController extends UiInputCommonController<Date, IUi
 
         $input.on("change keyup", (event: JQueryEventObject) => {
             this.ngModel.$setViewValue($input.val());
-        })
+        });
 
         this.ngModel.$render = () => {
             $input.val(this.ngModel.$viewValue);
-        };        
+        };
     }
 }
 

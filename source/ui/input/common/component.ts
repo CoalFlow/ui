@@ -33,6 +33,9 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
 
     value: TValue;
 
+    setDisabled: boolean;
+    setReadonly: boolean;
+
     constructor(protected $element: JQuery, protected $attrs: ng.IAttributes) {
         this.defaultOptions = <TOptions>{};
     }
@@ -76,6 +79,22 @@ export abstract class UiInputCommonComponent implements ng.IComponentOptions {
         ngModel: 'ngModel'
     };
 
+    constructor()
+    {
+
+        // This binds the disabled state to a string that will only disable the
+        // component if the string is 'true'. There are alternative mechanisms for this
+        // but this keeps the component binding mechanism consistent.
+
+        this.bindings["setDisabled"] = "=uiDisabled";
+
+        // This binds the readonly state to a string that will only set the
+        // component eadonly if the string is 'true'. There are alternative mechanisms for this
+        // but this keeps the component binding mechanism consistent.
+
+        this.bindings["setReadonly"] = "=uiReadonly";
+
+    }
 }
 
 // class Component implements ng.IComponentOptions {

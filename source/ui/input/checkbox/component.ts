@@ -33,8 +33,11 @@ export class UiCheckboxController extends UiInputCommonController<Boolean, IUiIn
 
     change()
     {
-        this.value = !this.value;
-        this.ngModel.$setViewValue(this.value);
+        if(!this.setDisabled)
+        {
+            this.value = !this.value;
+            this.ngModel.$setViewValue(this.value);
+        }
     }
 
     $onInit() {
@@ -51,31 +54,36 @@ export class UiCheckboxController extends UiInputCommonController<Boolean, IUiIn
     // Set the icon class for the checkbox - can be configured through the
     // options
 
+    lastIcon: string;
     getIcon(): string
     {
 
-        if(this.value)
+        if(!this.setDisabled)
         {
-            if (this.options.iconChecked)
+            if (this.value)
             {
-                return this.options.iconChecked;
+                if (this.options.iconChecked)
+                {
+                    this.lastIcon = this.options.iconChecked;
+                }
+                else
+                {
+                    this.lastIcon = DEFAULT_CHECKED;
+                }
             }
             else
             {
-                return DEFAULT_CHECKED;
+                if (this.options.iconUnchecked)
+                {
+                    this.lastIcon = this.options.iconUnchecked;
+                }
+                else
+                {
+                    this.lastIcon = DEFAULT_UNCHECKED;
+                }
             }
         }
-        else
-        {
-            if (this.options.iconUnchecked)
-            {
-                return this.options.iconUnchecked;
-            }
-            else
-            {
-                return DEFAULT_UNCHECKED;
-            }
-        }
+        return this.lastIcon;
     }
 }
 

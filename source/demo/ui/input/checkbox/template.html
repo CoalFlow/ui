@@ -43,6 +43,18 @@
         ui-validate (value = false)
     </div>
     <div class="col ">
-        <ui-input-checkbox ng-model="$ctrl.checkValue" ui-validate="'!$value'"></ui-input-checkbox>
+        <ui-input-checkbox ng-model="$ctrl.checkValue" ui-validate="'!$value'" ui-disabled="$ctrl.disabled"></ui-input-checkbox>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        disable
+    </div>
+    <div class="col ">
+        set disabled
+        <ui-input-checkbox ng-model="$ctrl.disabled"></ui-input-checkbox>
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.checkValue" ui-disabled="$ctrl.disabled"></ui-input-checkbox>
     </div>
 </div>

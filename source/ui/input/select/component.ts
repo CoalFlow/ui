@@ -38,8 +38,7 @@ export class UiInputSelectController extends UiInputCommonController<Number, IUi
         //  bind the ngModel's $render function to this value
         this.ngModel.$render = () => {
             this._value = this.ngModel.$viewValue;
-        }
-
+        };
     }
 
     //  value
@@ -133,12 +132,6 @@ export class UiInputSelectComponent extends UiInputCommonComponent {
         this.bindings["itemValue"] = "@?uiItemValue";
         this.bindings["itemLabel"] = "@?uiItemLabel";
         this.bindings["itemKey"] = "@?uiItemKey";
-
-        // This binds the disabled state to a string that will only disable the
-        // component if the string is 'true'. There are alternative mechanisms for this
-        // but this keeps the component binding mechanism consistent.
-
-        this.bindings["selDisabled"] = "@uiDisabled";
 
     }
 
