@@ -1,6 +1,10 @@
 <div>
     <div class="control">
-        <input placeholder="{{ $ctrl.options.placeholder }}" type=" text " />
+        <input
+                placeholder="{{ $ctrl.options.placeholder }}"
+                type=" text "
+                ng-readonly="$ctrl.setReadonly"
+        />
 
     </div>
 

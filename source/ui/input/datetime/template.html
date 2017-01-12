@@ -1,5 +1,10 @@
 <div>
     <div class="control">
-    <input placeholder="{{ $ctrl.options.placeholder }}"  step="{{ $ctrl.options.increment }}" type="datetime"/>
+    <input
+            placeholder="{{ $ctrl.options.placeholder }}"
+            step="{{ $ctrl.options.increment }}"
+            type="datetime"
+            ng-readonly="$ctrl.setReadonly"
+    />
     </div>
 </div>
