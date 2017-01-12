@@ -11,6 +11,7 @@ export class UiCheckboxController extends UiInputCommonController<Boolean, IUiIn
     format(value: boolean): string;
     change(): void;
     $onInit(): void;
+    lastIcon: string;
     getIcon(): string;
 }
 export class UiInputCheckboxComponent extends UiInputCommonComponent {
@@ -31,6 +32,8 @@ export abstract class UiInputCommonController<TValue, TOptions extends IUiInputC
     protected readonly options: TOptions;
     userOptions: TOptions;
     value: TValue;
+    setDisabled: boolean;
+    setReadonly: boolean;
     constructor($element: JQuery, $attrs: ng.IAttributes);
     $onInit(): void;
     abstract format(value: TValue): any;
@@ -47,6 +50,7 @@ export abstract class UiInputCommonComponent implements ng.IComponentOptions {
     require: {
         [controller: string]: string;
     };
+    constructor();
 }
 
 

@@ -118,6 +118,8 @@
   ui-input-datetime > div input::-webkit-inner-spin-button, ui-input-datetime > div input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
+  ui-input-datetime > div input[readonly] {
+    color: gray; }
 ui-input-number > div input {
   text-align: right; }
   ui-input-number > div input::-webkit-inner-spin-button, ui-input-number > div input::-webkit-outer-spin-button {
@@ -131,6 +133,8 @@ ui-input-number-spinner > div input {
 
 ui-input-number-spinner > div i {
   cursor: pointer; }
+  ui-input-number-spinner > div i[disabled] {
+    opacity: 0.3; }
 ui-input-percentage > div input {
   text-align: right; }
   ui-input-percentage > div input::-webkit-inner-spin-button, ui-input-percentage > div input::-webkit-outer-spin-button {
@@ -148,3 +152,5 @@ ui-input-checkbox {
     color: green; }
   ui-input-checkbox i:hover {
     cursor: hand; }
+  ui-input-checkbox i[disabled] {
+    opacity: .3; }
