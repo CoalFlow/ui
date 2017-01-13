@@ -1,0 +1,40 @@
+<div class="datetime-spinner">
+    <div class="days wrap">
+        <div class="list">
+            <div class="day option" ng-repeat="day in $ctrl.getDays()">
+                {{ day }}
+            </div>
+        </div>
+    </div>
+    <div class="months wrap">
+        <div class="list">
+            <div class="month option" ng-repeat="month in $ctrl.getMonths()">
+                {{ month }}
+            </div>
+        </div>
+    </div>
+    <div class="years wrap">
+        <div class="list">
+            <div class="year option" ng-repeat="year in $ctrl.getYears()">
+                {{ year }}
+            </div>
+        </div>
+    </div>
+    <div class="hours wrap">
+        <div class="list">
+            <div class="hour option" ng-repeat="hour in $ctrl.getHours()">
+                {{ hour }}
+            </div>
+        </div>
+    </div>
+    <div class="wrap colon">
+        <div class="inner">:</div>
+    </div>
+    <div class="minutes wrap">
+        <div class="list">
+            <div class="minute option" ng-repeat="minute in $ctrl.getMinutes()">
+                {{ minute }}
+            </div>
+        </div>
+    </div>
+</div>

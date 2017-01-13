@@ -34,6 +34,9 @@ export default (mod: ng.IModule) => {
                 .when('/ui/input/datetime', {
                     template: '<demo-ui-input-datetime></demo-ui-input-datetime>'
                 })
+                .when('/ui/input/datetimespinner', {
+                    template: '<demo-ui-input-datetime-spinner></demo-ui-input-datetime-spinner>'
+                })
                 .when('/ui/input/checkbox', {
                     template: '<demo-ui-input-checkbox></demo-ui-input-checkbox>'
                 })

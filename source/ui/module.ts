@@ -1,6 +1,7 @@
 declare var angular: ng.IAngularStatic;
 
 import { UiInputDateTimeComponent } from "./input/datetime/component";
+import { UiInputDateTimeSpinnerComponent } from "./input/datetime-spinner/component";
 import { UiInputTextComponent } from './input/text/component';
 import { UiInputNumberComponent } from './input/number/component';
 import { UiInputNumberSpinnerComponent } from './input/number-spinner/component';
@@ -19,6 +20,7 @@ let app = angular.module('ui', [
      .component("uiInputPercentage", new UiInputPercentageComponent())
      .component("uiInputSelect", new UiInputSelectComponent())
      .component("uiInputDatetime", new UiInputDateTimeComponent())
+     .component("uiInputDatetimeSpinner", new UiInputDateTimeSpinnerComponent())
      .component("uiInputCheckbox", new UiInputCheckboxComponent())
  ;
 
