@@ -2,12 +2,12 @@
     <div class="control">
         <input
                 placeholder="{{ $ctrl.options.placeholder }}"
-                step="{{ $ctrl.options.increment }}"
+                step="{{ $ctrl.increment }}"
                 type="number"
                 ng-readonly="$ctrl.setReadonly"
         />
     </div>
     <div class="addon">
-        %
+        {{ $ctrl.units }}
     </div>
 </div>
