@@ -1,4 +1,4 @@
-import * as lodashisNaN from 'lodash/isNaN';
+import * as lodash from 'lodash';
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 
 require('./style.scss');
@@ -8,20 +8,60 @@ export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
 
-    min: number;
-    max: number;
-    increment: number;
-    precision: number;
+    _min: number;
+    _max: number;
+    _increment: number;
+    _precision: number;
 
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
         super($element, $attrs);
 
-        this.increment = 1;
-        this.precision = 0;
+        this._increment = 1;
+        this._precision = 0;
 
-        this.min = -Number.MAX_VALUE;
-        this.max = Number.MAX_VALUE;
+        this._min = -Number.MAX_VALUE;
+        this._max = Number.MAX_VALUE;
 
+    }
+
+    get increment(): number
+    {
+        return this._increment;
+    }
+
+    set increment(value: number)
+    {
+        this._increment = +value;
+    }
+
+    get precision(): number
+    {
+        return this._precision;
+    }
+
+    set precision(value: number)
+    {
+        this._precision = +value;
+    }
+
+    get min(): number
+    {
+        return this._min;
+    }
+
+    set min(value: number)
+    {
+        this._min = +value;
+    }
+
+    get max(): number
+    {
+        return this._max;
+    }
+
+    set max(value: number)
+    {
+        this._max = +value;
     }
 
     // Code copied from MDN to round values to nearest precision...
@@ -68,7 +108,7 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
     parse(value: string): number {
 
         let parsedValue: number = parseFloat(value);
-        if (lodashisNaN(parsedValue)) {
+        if (lodash.isNaN(parsedValue)) {
             parsedValue = null;
         }
         parsedValue = this.testBounds(parsedValue);
@@ -94,15 +134,15 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
         {
             return null;
         }
-        if(value < +this.min)
+        if(value < this.min)
         {
             this.$element.addClass("min-bound");
-            return +this.min;
+            return this.min;
         }
-        if(value > +this.max)
+        if(value > this.max)
         {
             this.$element.addClass("max-bound");
-            return +this.max;
+            return this.max;
         }
         return value;
     }

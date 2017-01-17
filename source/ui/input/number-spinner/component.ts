@@ -30,7 +30,6 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
     }
 
     changeValueBy(value: number) {
-
         if(!this.setDisabled)
         {
             //  Get the current value from the DOM
