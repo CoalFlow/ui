@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col">
+        ui-input-percentage-spinner
+    </div>
+    <div class="col" style="text-align: right"> {{$ctrl.percentageValue}}
+</div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        basic - with increment (0.5)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...', increment: 0.5 } "></ui-input-percentage-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        basic - with incr & prec (0.5, 2)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...', increment: 0.5, precision: 2 } "></ui-input-percentage-spinner>
+    </div>
+</div>
+<div class="row ">
+    <div class="col ">
+        ng-required
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ng-required="true "></ui-input-percentage-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (0)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 0 } "></ui-input-percentage-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (1)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 1 } "></ui-input-percentage-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        with precision (2)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 2 } "></ui-input-percentage-spinner>
+    </div>
+</div>
+
+<div class=" row ">
+    <div class="col ">
+        readonly
+    </div>
+    <div class="col ">
+        <ui-input-checkbox ng-model="$ctrl.readonly"/>
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" ui-readonly="$ctrl.readonly"></ui-input-percentage-spinner>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { UiInputTextComponent } from './input/text/component';
 import { UiInputNumberComponent } from './input/number/component';
 import { UiInputNumberSpinnerComponent } from './input/number-spinner/component';
 import { UiInputPercentageComponent } from './input/percentage/component';
+import { UiInputPercentageSpinnerComponent } from "./input/percentage-spinner/component";
 import { UiInputSelectComponent } from './input/select/component';
 import { UiInputCheckboxComponent } from "./input/checkbox/component";
 
@@ -22,6 +23,7 @@ let app = angular.module('ui', [
      .component("uiInputDatetime", new UiInputDateTimeComponent())
      .component("uiInputDatetimeSpinner", new UiInputDateTimeSpinnerComponent())
      .component("uiInputCheckbox", new UiInputCheckboxComponent())
+     .component("uiInputPercentageSpinner", new UiInputPercentageSpinnerComponent())
  ;
 
 // text(app);

@@ -13,9 +13,6 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
 
     $postLink() {
 
-        //  get the html element that stores the viewvalue
-        this.$input = $(this.$element.find('input'));
-
         //  bind clicks on the spinners
         this.$element
             .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.increment())
@@ -66,14 +63,14 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
     $onInit() {
         super.$onInit();
         
-        var $input = $(this.$element.find('input'));
+        this.$input = $(this.$element.find('input'));
 
-        $input.on("change keyup", (event: JQueryEventObject) => {
-            this.ngModel.$setViewValue($input.val());
-        })
+        this.$input.on("change keyup", (event: JQueryEventObject) => {
+            this.ngModel.$setViewValue(this.$input.val());
+        });
 
         this.ngModel.$render = () => {
-            $input.val(this.ngModel.$viewValue);
+            this.$input.val(this.ngModel.$viewValue);
         };        
     }
 }

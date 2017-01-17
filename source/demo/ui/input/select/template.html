@@ -154,9 +154,10 @@
     <div class="col ">
         <ui-input-select
             ng-model="$ctrl.selectedValue"
+            ng-change="$ctrl.onChangeHandler()"
             ctrl="$ctrl.asyncObjectSelect"
             ui-item-label="label"
-            ui-item-key="id" />            
+            ui-item-key="id" />
     </div>
 </div>
 <h2>addons</h2>

@@ -21,6 +21,47 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
 
     }
 
+    // Code copied from MDN to round values to nearest precision...
+
+    static decimalAdjust(type: string, value: number, exp: number): number
+    {
+        // If the exp is undefined or zero...
+        if (typeof exp === 'undefined' || +exp === 0)
+        {
+            return Math[type](value);
+        }
+        value = +value;
+        exp = +exp;
+        // If the value is not a number or the exp is not an integer...
+        if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0))
+        {
+            return NaN;
+        }
+        // Shift
+        let valueExp = value.toString().split('e');
+        valueExp = Math[type](+(valueExp[0] + 'e' + (valueExp[1] ? (+valueExp[1] - exp) : -exp)));
+        // Shift back
+        valueExp = valueExp.toString().split('e');
+        return +(valueExp[0] + 'e' + (valueExp[1] ? (+valueExp[1] + exp) : exp));
+    }
+
+    // Decimal round
+    static round10(value: number, exp: number): number
+    {
+        return UiInputNumberController.decimalAdjust('round', value, exp);
+    }
+    // Decimal floor
+    static floor10(value: number, exp: number): number
+    {
+        return UiInputNumberController.decimalAdjust('floor', value, exp);
+    }
+
+    // Decimal ceil
+    static ceil10(value: number, exp: number): number
+    {
+        return UiInputNumberController.decimalAdjust('ceil', value, exp);
+    }
+
     parse(value: string): number {
 
         let parsedValue: number = parseFloat(value);
@@ -28,14 +69,13 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
             parsedValue = null;
         }
         return parsedValue;
-
     }
 
     format(value: number): string {
         if (value == null) {
             return null;
         } else {
-            return value.toFixed(this.options.precision);
+            return UiInputNumberController.round10(value, -8).toFixed(this.options.precision);
         }
     }
 

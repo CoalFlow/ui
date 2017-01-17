@@ -61,7 +61,7 @@ export class UiInputDateTimeSpinnerController extends UiInputCommonController<Da
         
         $('.wrap').bind( 'mousewheel', function(event){
             event.preventDefault();
-            if(event.originalEvent.wheelDelta / 120 > 0) {
+            if(event.originalEvent["wheelDelta"] / 120 > 0) {
                 console.log('Up');
                 this.position -= 120;
             } else {

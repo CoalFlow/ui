@@ -1,0 +1,17 @@
+<div>
+    <div class="addon" style="font-size: 8pt;">
+        <i class="icon-spinner-up incrementer" ng-disabled="$ctrl.setDisabled"></i>
+        <i class="icon-spinner-down decrementer" ng-disabled="$ctrl.setDisabled"></i>
+    </div>
+    <div class="control">
+        <input
+                placeholder="{{ $ctrl.options.placeholder }}"
+                step="{{ $ctrl.options.increment }}"
+                type="number"
+                ng-readonly="$ctrl.setReadonly"
+        />
+    </div>
+    <div class="addon">
+        %
+    </div>
+</div>

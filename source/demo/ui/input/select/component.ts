@@ -44,6 +44,10 @@ class Controller implements ng.IController {
 
     }
 
+    onChangeHandler()
+    {
+        console.log("onChangeHandler " + JSON.stringify(this["selectedValue"]));
+    }
 }
 
 class Component implements ng.IComponentOptions {
