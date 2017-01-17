@@ -1,6 +1,6 @@
 {
   "name": "ui",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "A package of common ui features written for CoalFlow.",
   "main": "build/index.js",
   "files": [
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:release": "rimraf build && webpack --config ./config/release/webpack.config.js",
     "start": "rimraf build && webpack-dev-server --config ./config/debug/webpack.config.js",
-    "release": "npm run build:release && npm version patch && git push --tags && git push && git push github --tags && git push github"
+    "release": "npm run build:release && npm version patch && git push --tags && git push && git push github --tags && git push github && git push origin master:develop"
   },
   "repository": {
     "type": "git",
