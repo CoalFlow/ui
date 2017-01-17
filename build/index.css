@@ -51,6 +51,8 @@
     border: solid 1px #4ab2f7; }
   .ui-input.ng-invalid > div {
     border: solid 1px #f00; }
+  .ui-input.max-bound > div, .ui-input.min-bound > div {
+    background-color: #f4dde2; }
 
 .ng-invalid > .ui-input > div {
   border: solid 1px #f00; }
@@ -164,15 +166,15 @@ ui-input-percentage > div input {
   ui-input-percentage > div input::-webkit-inner-spin-button, ui-input-percentage > div input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
-ui-input-percentage > div input {
+ui-input-percentage-spinner > div > div input {
   text-align: right; }
-  ui-input-percentage > div input::-webkit-inner-spin-button, ui-input-percentage > div input::-webkit-outer-spin-button {
+  ui-input-percentage-spinner > div > div input::-webkit-inner-spin-button, ui-input-percentage-spinner > div > div input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
 
-ui-input-percentage i {
+ui-input-percentage-spinner i {
   cursor: pointer; }
-  ui-input-percentage i[disabled] {
+  ui-input-percentage-spinner i[disabled] {
     opacity: 0.3; }
 ui-input-checkbox {
   -webkit-user-select: none;

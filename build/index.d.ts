@@ -99,24 +99,23 @@ export interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
 export class UiInputNumberSpinnerController extends UiInputNumberController {
     $input: JQuery;
     $postLink(): void;
-    increment(): void;
-    decrement(): void;
+    incrementValue(): void;
+    decrementValue(): void;
     changeValueBy(value: number): void;
     setViewValue(value: number): void;
     $onInit(): void;
 }
-export class UiInputNumberSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {
-    controller: typeof UiInputNumberSpinnerController;
-    template: any;
+export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
+    constructor();
 }
 
 export interface IUiInputNumberOptions extends IUiInputCommonOptions {
-    precision: number;
-    increment: number;
-    min: number;
-    max: number;
 }
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
+    min: number;
+    max: number;
+    increment: number;
+    precision: number;
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
     static decimalAdjust(type: string, value: number, exp: number): number;
     static round10(value: number, exp: number): number;
@@ -124,6 +123,7 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
     static ceil10(value: number, exp: number): number;
     parse(value: string): number;
     format(value: number): string;
+    testBounds(value: number): number;
     $onInit(): void;
 }
 export class UiInputNumberComponent extends UiInputCommonComponent {
@@ -136,25 +136,24 @@ export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 }
 export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerController {
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
-    increment(): void;
-    decrement(): void;
+    incrementValue(): void;
+    decrementValue(): void;
     parse(value: any): number;
     format(value: any): string;
 }
-export class UiInputPercentageSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {
-    controller: typeof UiInputPercentageSpinnerController;
-    template: any;
+export class UiInputPercentageSpinnerComponent extends UiInputNumberSpinnerComponent {
+    constructor();
 }
 
 export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 }
 export class UiInputPercentageController extends UiInputNumberController {
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
     parse(value: any): number;
     format(value: any): string;
 }
-export class UiInputPercentageComponent extends UiInputCommonComponent implements ng.IComponentOptions {
-    controller: typeof UiInputPercentageController;
-    template: any;
+export class UiInputPercentageComponent extends UiInputNumberComponent {
+    constructor();
 }
 
 export interface IUiInputSelectOptions extends IUiInputCommonOptions {
