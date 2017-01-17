@@ -112,11 +112,15 @@ export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
 export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 }
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
-    min: number;
-    max: number;
+    _min: number;
+    _max: number;
+    _increment: number;
+    _precision: number;
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
     increment: number;
     precision: number;
-    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
+    min: number;
+    max: number;
     static decimalAdjust(type: string, value: number, exp: number): number;
     static round10(value: number, exp: number): number;
     static floor10(value: number, exp: number): number;
@@ -135,7 +139,12 @@ export class UiInputNumberComponent extends UiInputCommonComponent {
 export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 }
 export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerController {
+    _factor: number;
+    invFactor: number;
+    units: string;
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
+    factor: number;
+    readonly invervseFactor: number;
     incrementValue(): void;
     decrementValue(): void;
     parse(value: any): number;
@@ -148,7 +157,12 @@ export class UiInputPercentageSpinnerComponent extends UiInputNumberSpinnerCompo
 export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 }
 export class UiInputPercentageController extends UiInputNumberController {
+    _factor: number;
+    invFactor: number;
+    units: string;
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes);
+    factor: number;
+    readonly invervseFactor: number;
     parse(value: any): number;
     format(value: any): string;
 }
