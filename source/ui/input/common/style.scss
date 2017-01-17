@@ -64,6 +64,11 @@ $invalidBorderColor:#f00;
             border: solid 1px $invalidBorderColor;
         }
     }
+    &.max-bound, &.min-bound {
+        >div {
+            background-color: #f4dde2;
+        }
+    }
 }
 .ng-invalid>.ui-input>div {
     border: solid 1px $invalidBorderColor;

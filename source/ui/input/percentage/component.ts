@@ -1,6 +1,7 @@
 
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 import { UiInputNumberController } from '../number/component';
+import {UiInputNumberComponent} from "../number/component";
 
 require('./style.scss');
 
@@ -9,6 +10,14 @@ export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 }
 
 export class UiInputPercentageController extends UiInputNumberController {
+
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
+        super($element, $attrs);
+
+        this.min = 0;
+        this.max = 100;
+
+    }
 
     parse(value): number {
         let parsedValue: number = super.parse(value);
@@ -29,9 +38,14 @@ export class UiInputPercentageController extends UiInputNumberController {
 
 }
 
-export class UiInputPercentageComponent extends UiInputCommonComponent implements ng.IComponentOptions {
+export class UiInputPercentageComponent extends UiInputNumberComponent
+{
+    constructor()
+    {
+        super();
 
-    controller = UiInputPercentageController;
-    template = require('./template.html');
+        this.controller = UiInputPercentageController;
+        this.template = require('./template.html');
 
+    }
 }

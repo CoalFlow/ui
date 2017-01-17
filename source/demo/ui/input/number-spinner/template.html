@@ -26,7 +26,7 @@
         with precision (0)
     </div>
     <div class="col ">
-        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 0 } "></ui-input-number-spinner>
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' }" ui-precision="2"></ui-input-number-spinner>
     </div>
 </div>
 <div class=" row ">
@@ -34,7 +34,7 @@
         with precision (1)
     </div>
     <div class="col ">
-        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 1, increment: 0.1 } "></ui-input-number-spinner>
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...'} " ui-precision="1" ui-increment="0.1"></ui-input-number-spinner>
     </div>
 </div>
 <div class=" row ">
@@ -42,7 +42,16 @@
         with precision (2)
     </div>
     <div class="col ">
-        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...', precision: 2, increment: 0.01 } "></ui-input-number-spinner>
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' } " ui-precision="2" ui-increment="0.01"></ui-input-number-spinner>
+    </div>
+</div>
+
+<div class=" row ">
+    <div class="col ">
+        with bounds (-10, 10)
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner ng-model="$ctrl.numberValue " options=" { placeholder: 'enter number...' } " ui-max="10" ui-min="-10"></ui-input-number-spinner>
     </div>
 </div>
 

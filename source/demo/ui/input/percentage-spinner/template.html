@@ -10,7 +10,7 @@
         basic - with increment (0.5)
     </div>
     <div class="col ">
-        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...', increment: 0.5 } "></ui-input-percentage-spinner>
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-increment="0.5"></ui-input-percentage-spinner>
     </div>
 </div>
 <div class=" row ">
@@ -18,7 +18,7 @@
         basic - with incr & prec (0.5, 2)
     </div>
     <div class="col ">
-        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...', increment: 0.5, precision: 2 } "></ui-input-percentage-spinner>
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-increment="0.5" ui-precision="2"></ui-input-percentage-spinner>
     </div>
 </div>
 <div class="row ">
@@ -34,7 +34,7 @@
         with precision (0)
     </div>
     <div class="col ">
-        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 0 } "></ui-input-percentage-spinner>
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-precision="0"></ui-input-percentage-spinner>
     </div>
 </div>
 <div class=" row ">
@@ -42,7 +42,7 @@
         with precision (1)
     </div>
     <div class="col ">
-        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 1 } "></ui-input-percentage-spinner>
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-precision="1"></ui-input-percentage-spinner>
     </div>
 </div>
 <div class=" row ">
@@ -50,7 +50,16 @@
         with precision (2)
     </div>
     <div class="col ">
-        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' , precision: 2 } "></ui-input-percentage-spinner>
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-precision="2"></ui-input-percentage-spinner>
+    </div>
+</div>
+
+<div class=" row ">
+    <div class="col ">
+        extended bounds (-50, 200)
+    </div>
+    <div class="col ">
+        <ui-input-percentage-spinner ng-model="$ctrl.percentageValue" options=" { placeholder: 'enter percentage...' } " ui-min="-50" ui-max="200"></ui-input-percentage-spinner>
     </div>
 </div>
 

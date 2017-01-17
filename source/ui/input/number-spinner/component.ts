@@ -1,5 +1,6 @@
 import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 import { IUiInputNumberOptions, UiInputNumberController } from '../number/component';
+import {UiInputNumberComponent} from "../number/component";
 
 require('./style.scss');
 
@@ -15,17 +16,17 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
 
         //  bind clicks on the spinners
         this.$element
-            .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.increment())
-            .on('mousedown', '.decrementer', (e: JQueryEventObject) => this.decrement());
+            .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.incrementValue())
+            .on('mousedown', '.decrementer', (e: JQueryEventObject) => this.decrementValue());
 
     }
 
-    increment(): void {
-        this.changeValueBy(this.options.increment);
+    incrementValue(): void {
+        this.changeValueBy(this.increment);
     }
 
-    decrement(): void {
-        this.changeValueBy(this.options.increment * -1);
+    decrementValue(): void {
+        this.changeValueBy(this.increment * -1);
     }
 
     changeValueBy(value: number) {
@@ -36,13 +37,15 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
             let currentValue = this.parse(this.$input.val());
 
             //  Set it to zero if it is non-numeric
-            if (currentValue == null)
+            if (currentValue === null)
             {
                 currentValue = 0;
             }
 
             //  Change the value
             currentValue += value;
+
+            currentValue = this.testBounds(currentValue);
 
             //  Set the view value
             this.setViewValue(currentValue);
@@ -70,14 +73,20 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
         });
 
         this.ngModel.$render = () => {
+            this.testBounds(this.ngModel.$viewValue);
             this.$input.val(this.ngModel.$viewValue);
         };        
     }
 }
 
-export class UiInputNumberSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {
+export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
 
-    controller = UiInputNumberSpinnerController;
-    template = require('./template.html');
+    constructor()
+    {
+        super();
 
+        this.controller = UiInputNumberSpinnerController;
+        this.template = require('./template.html');
+
+    }
 }

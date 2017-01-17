@@ -4,20 +4,23 @@ import { UiInputCommonController, IUiInputCommonOptions, UiInputCommonComponent 
 require('./style.scss');
 
 export interface IUiInputNumberOptions extends IUiInputCommonOptions {
-
-    precision: number;  //  The number of decimal places to display
-    increment: number;  //  The number by which to change the value when the user increments / decrements the controller
-    min: number;
-    max: number;
 }
 
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
 
+    min: number;
+    max: number;
+    increment: number;
+    precision: number;
+
     constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
         super($element, $attrs);
 
-        this.defaultOptions.increment = 1;
-        this.defaultOptions.precision = 0;
+        this.increment = 1;
+        this.precision = 0;
+
+        this.min = -Number.MAX_VALUE;
+        this.max = Number.MAX_VALUE;
 
     }
 
@@ -68,29 +71,55 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
         if (lodashisNaN(parsedValue)) {
             parsedValue = null;
         }
+        parsedValue = this.testBounds(parsedValue);
+
         return parsedValue;
     }
 
     format(value: number): string {
         if (value == null) {
             return null;
-        } else {
-            return UiInputNumberController.round10(value, -8).toFixed(this.options.precision);
         }
+        else
+        {
+            return UiInputNumberController.round10(value, -8).toFixed(this.precision);
+        }
+    }
+
+    testBounds(value: number): number
+    {
+        this.$element.removeClass("min-bound");
+        this.$element.removeClass("max-bound");
+        if (value === null)
+        {
+            return null;
+        }
+        if(value < +this.min)
+        {
+            this.$element.addClass("min-bound");
+            return +this.min;
+        }
+        if(value > +this.max)
+        {
+            this.$element.addClass("max-bound");
+            return +this.max;
+        }
+        return value;
     }
 
     $onInit() {
         super.$onInit();
         
-        var $input = $(this.$element.find('input'));
+        let $input = $(this.$element.find('input'));
 
         $input.on("change keyup", (event: JQueryEventObject) => {
             this.ngModel.$setViewValue($input.val());
-        })
+        });
 
         this.ngModel.$render = () => {
+            this.testBounds(this.ngModel.$viewValue);
             $input.val(this.ngModel.$viewValue);
-        };        
+        };
     }
 
 }
@@ -111,9 +140,3 @@ export class UiInputNumberComponent extends UiInputCommonComponent {
     }
 
 }
-
-// export default (module: ng.IModule) => {
-
-//     module.component('uiInputNumber', new Component());
-
-// };

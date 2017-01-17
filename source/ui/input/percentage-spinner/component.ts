@@ -1,6 +1,7 @@
 
 import { IUiInputCommonOptions, UiInputCommonComponent } from '../common/component';
 import {UiInputNumberSpinnerController} from "../number-spinner/component";
+import {UiInputNumberSpinnerComponent} from "../number-spinner/component";
 
 require('./style.scss');
 
@@ -9,20 +10,20 @@ export interface IUiInputPercentageOptions extends IUiInputCommonOptions {
 
 export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerController {
 
-    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes)
+    {
         super($element, $attrs);
-
-        // this.defaultOptions.precision = 2;
-
+        this.min = 0;
+        this.max = 100;
     }
 
 
-    increment(): void {
-        this.changeValueBy(this.options.increment / 100);
+    incrementValue(): void {
+        this.changeValueBy(this.increment / 100);
     }
 
-    decrement(): void {
-        this.changeValueBy((this.options.increment / 100) * -1);
+    decrementValue(): void {
+        this.changeValueBy((this.increment / 100) * -1);
     }
 
     parse(value): number {
@@ -44,9 +45,15 @@ export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerCont
 
 }
 
-export class UiInputPercentageSpinnerComponent extends UiInputCommonComponent implements ng.IComponentOptions {
+export class UiInputPercentageSpinnerComponent extends UiInputNumberSpinnerComponent
+{
+    constructor() {
+        super();
 
-    controller = UiInputPercentageSpinnerController;
-    template = require('./template.html');
+        this.controller = UiInputPercentageSpinnerController;
+        this.template = require('./template.html');
+
+    }
+
 
 }
