@@ -172,8 +172,8 @@ export class UiInputNumberComponent extends UiInputCommonComponent {
     constructor() {
         super();
 
-        this.bindings["min"] = "@?uiMin";
-        this.bindings["max"] = "@?uiMax";
+        this.bindings["min"] = "<?uiMin";
+        this.bindings["max"] = "<?uiMax";
         this.bindings["increment"] = "@?uiIncrement";
         this.bindings["precision"] = "@?uiPrecision";
 
