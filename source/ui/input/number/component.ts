@@ -157,7 +157,7 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
         });
 
         this.ngModel.$render = () => {
-            this.testBounds(this.ngModel.$viewValue);
+            this.ngModel.$viewValue = this.testBounds(this.ngModel.$viewValue);
             $input.val(this.ngModel.$viewValue);
         };
     }

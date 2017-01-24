@@ -59,7 +59,6 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
 
         //  Set the view value on ngModel (this may be rejected if it is invalid, end result will be null)
         this.ngModel.$setViewValue(this.$input.val());
-
     }
 
     $onInit() {
@@ -72,7 +71,7 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
         });
 
         this.ngModel.$render = () => {
-            this.testBounds(this.ngModel.$viewValue);
+            this.ngModel.$viewValue = this.testBounds(this.ngModel.$viewValue);
             this.$input.val(this.ngModel.$viewValue);
         };        
     }

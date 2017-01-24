@@ -54,14 +54,14 @@ export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerCont
     parse(value): number {
         let parsedValue: number = super.parse(value);
         if (parsedValue != null) {
-            parsedValue *= this.invervseFactor;
+            parsedValue *= this.testBounds(this.invervseFactor);
         }
-        return parsedValue
+        return parsedValue;
     }
 
     format(value): string {
         if (value != null) {
-            return super.format(value * this.factor);
+            return super.format(this.testBounds(value * this.factor));
         } else {
             return null;
         }
