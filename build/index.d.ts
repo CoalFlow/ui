@@ -98,15 +98,18 @@ export interface IUiInputNumberSpinnerOptions extends IUiInputNumberOptions {
 }
 export class UiInputNumberSpinnerController extends UiInputNumberController {
     $input: JQuery;
-    $postLink(): void;
     incrementValue(): void;
     decrementValue(): void;
     changeValueBy(value: number): void;
     setViewValue(value: number): void;
     $onInit(): void;
+    $postLink(): void;
 }
 export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
     constructor();
+    transclude: {
+        postfix: string;
+    };
 }
 
 export interface IUiInputNumberOptions extends IUiInputCommonOptions {

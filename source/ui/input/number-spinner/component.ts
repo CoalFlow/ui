@@ -12,15 +12,6 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
 
     $input: JQuery;
 
-    $postLink() {
-
-        //  bind clicks on the spinners
-        this.$element
-            .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.incrementValue())
-            .on('mousedown', '.decrementer', (e: JQueryEventObject) => this.decrementValue());
-
-    }
-
     incrementValue(): void {
         this.changeValueBy(this.increment);
     }
@@ -75,6 +66,18 @@ export class UiInputNumberSpinnerController extends UiInputNumberController {
             this.$input.val(this.ngModel.$viewValue);
         };        
     }
+
+    $postLink() {
+
+        //  bind clicks on the spinners
+        this.$element
+            .on('mousedown', '.incrementer', (e: JQueryEventObject) => this.incrementValue())
+            .on('mousedown', '.decrementer', (e: JQueryEventObject) => this.decrementValue());
+
+        this.$element.find("prefix").children().unwrap();
+        this.$element.find("postfix").children().unwrap();
+        this.$element.find(".addons").children().unwrap();
+    }
 }
 
 export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
@@ -87,4 +90,8 @@ export class UiInputNumberSpinnerComponent extends UiInputNumberComponent {
         this.template = require('./template.html');
 
     }
+
+    transclude = {
+        postfix: "?postfix"
+    };
 }
