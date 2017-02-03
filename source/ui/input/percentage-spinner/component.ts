@@ -14,9 +14,9 @@ export class UiInputPercentageSpinnerController extends UiInputNumberSpinnerCont
     invFactor: number;
     units: string;
 
-    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes)
-    {
-        super($element, $attrs);
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes, $parse : ng.IParseService, $scope: ng.IScope) {
+        super($element, $attrs, $parse, $scope);
+        
         this.min = 0;
         this.max = 100;
         this._factor = 100;

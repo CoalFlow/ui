@@ -5,6 +5,7 @@
     <div class="col" style="text-align: right"> {{$ctrl.numberValue}}
 </div>
 </div>
+
 <div class=" row ">
     <div class="col ">
         basic
@@ -113,6 +114,28 @@
     </div>
 </div>
 
+<div class=" row ">
+    <div class="col ">
+        Set Max Value
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner
+                ng-model="$ctrl.maxValue"
+        ></ui-input-number-spinner>
+    </div>
+</div>
+<div class=" row ">
+    <div class="col ">
+        Apply Max Value
+    </div>
+    <div class="col ">
+        <ui-input-number-spinner
+                ng-model="$ctrl.numberValue"
+                ui-max="$ctrl.maxValue"                
+        ></ui-input-number-spinner>
+    </div>
+</div>
+
 
 <table style="width: 100%">
 <tr>
@@ -121,4 +144,4 @@
 <ui-input-number-spinner ng-model="$ctrl.numberValue" options=" { placeholder: 'enter number...' } " ui-validate="'$value > 0'"></ui-input-number-spinner>
 </td>
 </tr>
-</table>
+</table>-->

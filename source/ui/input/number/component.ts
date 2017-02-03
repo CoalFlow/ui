@@ -8,12 +8,12 @@ export interface IUiInputNumberOptions extends IUiInputCommonOptions {
 
 export class UiInputNumberController extends UiInputCommonController<Number, IUiInputNumberOptions> {
 
-    _min: number;
-    _max: number;
-    _increment: number;
-    _precision: number;
+    private _min: number;
+    private _max: number;
+    private _increment: number;
+    private _precision: number;
 
-    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) {
+    constructor($element: ng.IAugmentedJQuery, $attrs: ng.IAttributes, protected $parse : ng.IParseService, protected $scope: ng.IScope) {
         super($element, $attrs);
 
         this._increment = 1;
@@ -46,22 +46,32 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
 
     get min(): number
     {
-        return this._min;
+        if (this.$attrs['uiMin']) {
+            return this.$parse(this.$attrs['uiMin'])(this.$scope.$parent);    
+        } else {
+            return this._min;
+        }
     }
 
     set min(value: number)
     {
         this._min = +value;
+        if (this.ngModel) this.testBounds(this.ngModel.$viewValue);
     }
 
     get max(): number
     {
-        return this._max;
+        if (this.$attrs['uiMax']) {
+            return this.$parse(this.$attrs['uiMax'])(this.$scope.$parent);    
+        } else {
+            return this._max;
+        }
     }
 
     set max(value: number)
     {
         this._max = +value;
+        if (this.ngModel) this.testBounds(this.ngModel.$viewValue);
     }
 
     // Code copied from MDN to round values to nearest precision...
@@ -161,7 +171,6 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
             $input.val(this.ngModel.$viewValue);
         };
     }
-
 }
 
 export class UiInputNumberComponent extends UiInputCommonComponent {
@@ -172,7 +181,7 @@ export class UiInputNumberComponent extends UiInputCommonComponent {
     constructor() {
         super();
 
-        this.bindings["min"] = "<?uiMin";
+     //   this.bindings["min"] = "<?uiMin";
         this.bindings["max"] = "<?uiMax";
         this.bindings["increment"] = "@?uiIncrement";
         this.bindings["precision"] = "@?uiPrecision";

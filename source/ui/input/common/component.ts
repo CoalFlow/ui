@@ -13,7 +13,7 @@ export interface IUiInputCommonOptions {
 
 export abstract class UiInputCommonController<TValue, TOptions extends IUiInputCommonOptions> implements ng.IController {
 
-    static $inject = ['$element', '$attrs'];
+    static $inject = ['$element', '$attrs', '$parse', '$scope'];
 
     ngModel: ng.INgModelController;
 
