@@ -122,7 +122,6 @@ export class UiInputNumberController extends UiInputCommonController<Number, IUi
             parsedValue = null;
         }
         parsedValue = this.testBounds(parsedValue);
-
         return parsedValue;
     }
 
